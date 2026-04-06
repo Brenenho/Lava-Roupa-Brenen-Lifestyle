@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roupas de Cama — LavanTech</title>
+  <meta name="description" content="Guia passo a passo para lavar lençóis, fronhas e capas de almofada do jeito certo — eliminando ácaros, odores e mantendo o tecido macio.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/guide.css">
+  <style>
+    :root {
+      --guide-primary:  #9B8ECF;
+      --guide-dark:     #6B5B9E;
+      --guide-light:    #C4B8E8;
+    }
+
+    .guide-hero {
+      background: linear-gradient(135deg, #6B5B9E 0%, #9B8ECF 60%, #C4B8E8 100%);
+    }
+
+    .step-number {
+      background: var(--guide-primary) !important;
+      border-color: var(--guide-dark) !important;
+      box-shadow: 3px 3px 0px var(--guide-dark) !important;
+    }
+
+    .science-box {
+      background: linear-gradient(135deg, #2D2154, #4A3880);
+      border: 2px solid var(--color-border-dark);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-5);
+      color: white;
+      margin: var(--sp-4) 0;
+    }
+
+    .science-box h4 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: #C4B8E8;
+      margin-bottom: var(--sp-3);
+    }
+
+    .science-box p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.65;
+    }
+
+    .product-amount-card {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-3);
+      padding: var(--sp-4);
+      background: var(--color-muted);
+      border: 1.5px solid var(--color-border-dark);
+      border-radius: var(--radius-md);
+      margin: var(--sp-3) 0;
+    }
+
+    .product-amount-card .product-emoji { font-size: 1.8rem; flex-shrink: 0; }
+
+    .product-amount-card .product-info { flex: 1; }
+
+    .product-amount-card .product-name {
+      font-weight: 800;
+      color: var(--color-fg);
+      font-size: 0.95rem;
+    }
+
+    .product-amount-card .product-dose {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--guide-primary);
+    }
+
+    .product-amount-card .product-note {
+      font-size: 0.8rem;
+      color: var(--color-fg-muted);
+    }
+
+    .frequency-visual {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-2);
+      margin: var(--sp-4) 0;
+    }
+
+    .freq-day {
+      text-align: center;
+      padding: var(--sp-3);
+      border-radius: var(--radius-md);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .freq-day.wash {
+      background: #EDE9FB;
+      border: 1.5px solid #C4B8E8;
+      color: var(--guide-dark);
+    }
+
+    .freq-day.sleep {
+      background: var(--color-muted);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-fg-muted);
+    }
+
+    .freq-day .freq-icon { font-size: 1.2rem; display: block; margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+  <!-- ── HERO ── -->
+  <div class="guide-hero">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
+    <div class="container">
+      <a href="index.html" class="hero-back-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Voltar para guias
+      </a>
+      <div class="guide-hero-inner">
+        <div>
+          <div class="guide-hero-icon">🛏️</div>
+          <div class="guide-hero-text">
+            <h1>Roupas de Cama</h1>
+            <p>Lençóis, fronhas e capas acumulam suor, oleosidade e ácaros muito mais rápido do que parecem. Lavar na temperatura certa elimina tudo isso e mantém o tecido macio por muito mais tempo.</p>
+            <div class="guide-tags">
+              <span class="guide-tag">🛏️ 8 passos</span>
+              <span class="guide-tag">♨️ 40–60°C</span>
+              <span class="guide-tag">✨ Percarbonato</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PROGRESS ── -->
+  <div class="progress-sticky">
+    <div class="container">
+      <div class="progress-inner">
+        <div class="progress-track-wrap">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-text-wrap">
+          <span class="progress-pct" id="progressPct">0%</span>
+          <span class="progress-steps-txt" id="progressSteps">0 de 8</span>
+        </div>
+        <button class="reset-btn" id="resetBtn" aria-label="Reiniciar progresso">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-5.1"/></svg>
+          Reiniciar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STEPS ── -->
+  <main>
+    <section class="steps-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="section-heading-icon" style="background:#EDE9FB;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#6B5B9E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h2>Passo a Passo</h2>
+        </div>
+
+        <div class="steps-list">
+
+          <!-- PASSO 1 -->
+          <div class="step-item" data-step-id="cama-1">
+            <div class="step-header">
+              <div class="step-number">1</div>
+              <div class="step-completed-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="step-text">
+                <div class="step-title">Com que frequência lavar?</div>
+                <div class="step-subtitle">A resposta vai te surpreender</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="science-box">
+                <h4>O que acumula no lençol em uma semana</h4>
+                <p>Uma pessoa solta em média <strong>30-40g de pele morta por hora de sono</strong> nos lençóis. Além disso: suor, oleosidade natural da pele, saliva e — se você tem animal de estimação — pelos. Tudo isso alimenta ácaros que se reproduzem nas fibras.</p>
+              </div>
+              <p class="step-desc">
+                Lençóis e fronhas devem ser lavados <strong>a cada 1–2 semanas</strong>. Capas de almofada decorativas podem aguentar 2 semanas. Se você tem pele oleosa, alergia ou animal de estimação, considere <em>lavar semanalmente</em>.
+              </p>
+              <div class="frequency-visual" aria-hidden="true">
+                <div class="freq-day sleep"><span class="freq-icon">😴</span>Dorme</div>
+                <div class="freq-day sleep"><span class="freq-icon">😴</span>Dorme</div>
+                <div class="freq-day sleep"><span class="freq-icon">😴</span>Dorme</div>
+                <div class="freq-day sleep"><span class="freq-icon">😴</span>Dorme</div>
+                <div class="freq-day sleep"><span class="freq-icon">😴</span>Dorme</div>
+                <div class="freq-day sleep"><span class="freq-icon">😴</span>Dorme</div>
+                <div class="freq-day wash"><span class="freq-icon">🫧</span>Lavar!</div>
+              </div>
+              <div class="callout callout--tip">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Dica de organização</div>
+                  <p>Tenha dois jogos completos de cama. Assim você lava um e usa o outro — sem pressa e sem esperar a roupa secar para poder dormir.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- PASSO 2 -->
+          <div class="step-item" data-step-id="cama-2">
+            <div class="step-header">
+              <div class="step-number">2</div>
+              <div class="step-completed-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="step-text">
+                <div class="step-title">Separe por cor e por tipo</div>
+                <div class="step-subtitle">Lençóis não podem ir com edredons</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Separe as peças em dois grupos distintos:
+              </p>
+              <p class="step-desc">
+                <strong>Grupo 1 — Lençóis, fronhas e capas:</strong> Vão juntos na máquina. São peças finas que giram e enxaguam bem.<br><br>
+                <strong>Grupo 2 — Edredons e cobertores:</strong> Jamais na mesma lavagem. São muito volumosos e pesados — quando misturado com lençóis, a máquina não consegue agitar direito <em>nenhum dos dois</em>.
+              </p>
+              <p class="step-desc">
+                Dentro do Grupo 1, separe também por cor: brancos e claros juntos, escuros e coloridos juntos. Cores vivas podem manchar tecidos claros.
+              </p>
+              <div class="callout callout--warning">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Cuidado com lençóis novos</div>
+                  <p>Lençóis novos — especialmente coloridos — podem soltar bastante tinta na primeira lavagem. Lave separado na primeira vez.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- PASSO 3 -->
+          <div class="step-item" data-step-id="cama-3">
+            <div class="step-header">
+              <div class="step-number">3</div>
+              <div class="step-completed-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="step-text">
+                <div class="step-title">Prepare o percarbonato (para lençóis claros)</div>
+                <div class="step-subtitle">O segredo para lençóis sempre frescos e branquinhos</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Para lençóis brancos ou de cores claras, o <strong>percarbonato de sódio</strong> é o ingrediente chave. Ele elimina manchas amareladas de suor, remove odores profundos e mata ácaros — tudo sem danificar o tecido.
+              </p>
+              <div class="product-amount-card">
+                <span class="product-emoji">✨</span>
+                <div class="product-info">
+                  <div class="product-name">Percarbonato de sódio</div>
+                  <div class="product-dose">1 scoop (½ máquina) · 2 scoops (máquina cheia)</div>
+                  <div class="product-note">No compartimento de pré-lavagem ou dissolvido em água morna antes</div>
+                </div>
+              </div>
+              <div class="callout callout--tip">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Manchas de suor amareladas?</div>
+                  <p>Dissolva <strong>2 scoops de percarbonato em água quente (60°C)</strong> e mergulhe as peças por 4–8 horas antes de lavar na máquina. O oxigênio ativo penetra nas fibras e quebra as moléculas de suor.</p>
+                </div>
+              </div>
+              <div class="callout callout--info">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Lençóis coloridos ou escuros</div>
+                  <p>NÃO use percarbonato — ele pode desbotar as cores. Para lençóis escuros, use sabão neutro ou sabão para cores, sem nenhum agente branqueador.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- PASSO 4 -->
+          <div class="step-item" data-step-id="cama-4">
+            <div class="step-header">
+              <div class="step-number">4</div>
+              <div class="step-completed-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="step-text">
+                <div class="step-title">Adicione o sabão</div>
+                <div class="step-subtitle">Sabão neutro — sem branqueador óptico para coloridos</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Use <strong>sabão líquido neutro</strong> no compartimento correto da gaveta da máquina. A quantidade ideal é a indicada no rótulo — não coloque mais achando que vai lavar melhor.
+              </p>
+              <div class="product-amount-card">
+                <span class="product-emoji">🧴</span>
+                <div class="product-info">
+                  <div class="product-name">Sabão líquido neutro</div>
+                  <div class="product-dose">1 tampinha (½ máquina) · 2 tampinhas (máquina cheia)</div>
+                  <div class="product-note">No compartimento principal de sabão da gaveta</div>
+                </div>
+              </div>
+              <div class="callout callout--warning">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Excesso de sabão é problema</div>
+                  <p>Sabão em excesso não sai completamente no enxágue e fica grudado nas fibras. Com o tempo, isso deixa o lençol com cheiro de mofado e textura pegajosa.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- PASSO 5 -->
+          <div class="step-item" data-step-id="cama-5">
+            <div class="step-header">
+              <div class="step-number">5</div>
+              <div class="step-completed-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="step-text">
+                <div class="step-title">Configure a temperatura certa</div>
+                <div class="step-subtitle">60°C mata os ácaros — 40°C para o dia a dia</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="science-box">
+                <h4>Temperatura e ácaros</h4>
+                <p>Ácaros morrem acima de <strong>55°C</strong>. Uma lavagem a 60°C elimina 100% dos ácaros presentes no lençol — algo que a temperatura ambiente ou 30°C simplesmente não consegue fazer.</p>
+              </div>
+              <p class="step-desc">
+                Para eliminar ácaros de verdade: use <strong>60°C</strong> na máquina, pelo menos uma vez a cada 2–4 semanas. Para as lavagens intermediárias (entre a lavagem antiácaro), <em>40°C é suficiente</em> para remover sujidade e odor.
+              </p>
+              <div style="display:flex;gap:var(--sp-3);flex-wrap:wrap;margin:var(--sp-4) 0;">
+                <span class="temp-badge temp-hot">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+                  60°C — antiácaro
+                </span>
+                <span class="temp-badge temp-warm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+                  40°C — lavagem normal
+                </span>
+              </div>
+              <div class="callout callout--tip">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Verifique a etiqueta do tecido</div>
+                  <p>Alguns lençóis de microfibra ou cetim não toleram 60°C. Confira a etiqueta — se houver a indicação de 40°C máximo, respeite e troque os lençóis com mais frequência.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- PASSO 6 -->
+          <div class="step-item" data-step-id="cama-6">
+            <div class="step-header">
+              <div class="step-number">6</div>
+              <div class="step-completed-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="step-text">
+                <div class="step-title">Escolha o modo correto</div>
+                <div class="step-subtitle">Algodão ou normal — centrifugação moderada</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Use o modo <strong>Algodão</strong> (ou Normal/Standard) na máquina. Esses modos têm agitação mais intensa — ideal para remover a sujidade embutida nas fibras dos lençóis.
+              </p>
+              <p class="step-desc">
+                Para a centrifugação: <em>800–1000 RPM é suficiente</em>. Velocidades muito altas (1400+ RPM) podem criar vincos permanentes em lençóis de algodão e desgastar o elástico das capas.
+              </p>
+              <div class="callout callout--info">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Lençóis de linho ou microfibra</div>
+                  <p>Use o modo delicados e centrifugação mais baixa (600 RPM). Tecidos mais finos são sensíveis à agitação intensa e podem encolher ou ficar com vincos difíceis de tirar.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- PASSO 7 -->
+          <div class="step-item" data-step-id="cama-7">
+            <div class="step-header">
+              <div class="step-number">7</div>
+              <div class="step-completed-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="step-text">
+                <div class="step-title">Retire assim que terminar</div>
+                <div class="step-subtitle">Não deixe na máquina — o mofo começa rápido</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Lençóis úmidos dentro da máquina fechada formam colônias de fungo e bactérias em <strong>menos de 30 minutos</strong> em temperatura ambiente. Retire imediatamente ao terminar o ciclo.
+              </p>
+              <p class="step-desc">
+                Sacuda cada peça bem antes de pendurar — isso ajuda a destensionar as fibras e reduz os vincos. Estique o elástico das capas de canto com as mãos para não encolher ao secar.
+              </p>
+              <div class="callout callout--warning">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Cheiro de mofado mesmo depois de lavar?</div>
+                  <p>Se o lençol cheira mal mesmo após a lavagem, o mofo já está nas fibras. Faça um pré-molho com <strong>percarbonato + água quente (60°C)</strong> por 6–12 horas e lave novamente. Repita se necessário.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- PASSO 8 -->
+          <div class="step-item" data-step-id="cama-8">
+            <div class="step-header">
+              <div class="step-number">8</div>
+              <div class="step-completed-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="step-text">
+                <div class="step-title">Seque completamente antes de guardar</div>
+                <div class="step-subtitle">Parcialmente úmido na gaveta = mofo garantido</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Lençóis de algodão podem demorar 3–4 horas para secar no varal em dia de sol. Em dias nublados ou úmidos, podem precisar de 6+ horas. <strong>Não guarde na gaveta com qualquer sinal de umidade</strong>.
+              </p>
+              <p class="step-desc">
+                Guarde dobrado, levemente dobrado — não amasse em bolinhas dentro da gaveta. Tecidos dobrados corretamente mantêm a forma e são mais fáceis de colocar na cama.
+              </p>
+              <div class="callout callout--product">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Guardar lençóis frescos por mais tempo</div>
+                  <p>Coloque sachês de lavanda ou cedro na gaveta. Além de perfumar, repelem traças e ácaros naturalmente — e não deixam resíduos nas fibras como os produtos químicos.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+        </div><!-- /.steps-list -->
+
+        <!-- Completion banner -->
+        <div class="completion-banner" id="completionBanner" role="status" aria-live="polite">
+          <span class="completion-emoji">🛏️</span>
+          <h2>Lençóis prontos!</h2>
+          <p>Cama fresquinha, livre de ácaros e cheirosa — do jeito que merecia.</p>
+          <div class="completion-actions">
+            <a href="index.html" class="btn-white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              Ver outros guias
+            </a>
+            <a href="edredom.html" class="btn-white-outline">
+              🌸 Lavar o edredom também
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Feito com carinho para suas roupas durarem mais ✨</p>
+    </div>
+  </footer>
+
+  <script>
+    function markStepDone(btn) {
+      const step = btn.closest('.step-item');
+      const isDone = step.classList.contains('completed');
+      if (typeof markDone === 'function') markDone(step, !isDone);
+    }
+  </script>
+  <script src="js/guide.js"></script>
+</body>
+</html>

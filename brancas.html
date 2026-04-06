@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roupas Brancas — Lavar Roupa</title>
+  <meta name="description" content="Guia passo a passo de como lavar roupas brancas para ficarem sempre branquinhas e sem amarelado.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/guide.css">
+  <style>
+    /* ── White clothes theme ── */
+    :root {
+      --guide-primary:  #64748B;
+      --guide-dark:     #334155;
+      --guide-light:    #F1F5F9;
+      --guide-gradient: linear-gradient(135deg, #334155 0%, #475569 40%, #64748B 100%);
+      --step-color:     #475569;
+    }
+
+    .guide-hero { background: var(--guide-gradient); }
+    .hero-blob   { background: #94A3B8; }
+
+    .step-number { background: var(--step-color); border-color: var(--guide-dark); box-shadow: 3px 3px 0px var(--guide-dark); }
+
+    /* Decorative pattern overlay */
+    .guide-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    /* Guide nav pills */
+    .guide-nav {
+      display: flex;
+      gap: var(--sp-2);
+      overflow-x: auto;
+      padding: var(--sp-4) 0;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .guide-nav::-webkit-scrollbar { display: none; }
+
+    .guide-nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: var(--sp-2) var(--sp-4);
+      background: var(--color-surface);
+      border: 2px solid var(--color-border-dark);
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-fg-muted);
+      white-space: nowrap;
+      transition: all var(--transition-fast);
+      box-shadow: 2px 2px 0px var(--color-border-dark);
+    }
+
+    .guide-nav-link:hover {
+      background: var(--color-muted);
+      color: var(--color-fg);
+    }
+
+    .guide-nav-link.active {
+      background: var(--color-primary);
+      color: white;
+      border-color: var(--color-primary-dark);
+    }
+
+    /* Visual accent cards */
+    .visual-card {
+      border-radius: var(--radius-lg);
+      border: 3px solid var(--color-border-dark);
+      overflow: hidden;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-bottom: var(--sp-4);
+    }
+
+    .science-box {
+      background: linear-gradient(135deg, #1E293B, #334155);
+      border: 3px solid var(--color-border-dark);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-5);
+      color: white;
+      margin: var(--sp-4) 0;
+    }
+
+    .science-box h4 { font-family: var(--font-heading); font-size: 1.4rem; color: #93C5FD; margin-bottom: var(--sp-3); }
+    .science-box p  { font-size: 0.93rem; color: rgba(255,255,255,0.85); line-height: 1.65; }
+
+    .color-wheel-visual {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-4);
+      background: #FFFBEB;
+      border: 2px solid #FDE68A;
+      border-radius: var(--radius-md);
+      padding: var(--sp-4);
+      margin: var(--sp-3) 0;
+    }
+
+    .color-swatch {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      border: 3px solid rgba(0,0,0,0.1);
+      flex-shrink: 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .temp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 2px solid;
+    }
+
+    .temp-hot  { background: #FEF2F2; color: #DC2626; border-color: #FECACA; }
+    .temp-warm { background: #FFFBEB; color: #D97706; border-color: #FDE68A; }
+    .temp-cold { background: #F0F9FF; color: #0284C7; border-color: #BAE6FD; }
+  </style>
+</head>
+<body>
+
+  <!-- ── HERO ── -->
+  <div class="guide-hero">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
+    <div class="container">
+      <a href="index.html" class="hero-back-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Voltar para guias
+      </a>
+      <div class="guide-hero-inner">
+        <div class="guide-hero-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>
+        </div>
+        <div class="guide-hero-text">
+          <h1>Roupas Brancas</h1>
+          <p>Guia completo para manter suas roupas brancas sempre branquinhas, sem amarelado e sem destruir o tecido.</p>
+          <div class="guide-tags">
+            <span class="guide-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              8 passos
+            </span>
+            <span class="guide-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Soak overnight
+            </span>
+            <span class="guide-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/></svg>
+              Percarbonato de sódio
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PROGRESS STICKY ── -->
+  <div class="progress-sticky">
+    <div class="container">
+      <div class="progress-inner">
+        <div class="progress-track-wrap">
+          <div class="progress-fill" id="progressFill" style="background: linear-gradient(90deg, #475569, #94A3B8);"></div>
+        </div>
+        <div class="progress-text-wrap">
+          <span class="progress-pct" id="progressPct">0%</span>
+          <span class="progress-steps-txt" id="progressSteps">0 de 8</span>
+        </div>
+        <button class="reset-btn" id="resetBtn" aria-label="Reiniciar progresso">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-5.1"/></svg>
+          Reiniciar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── GUIDE NAV ── -->
+  <div class="container">
+    <nav class="guide-nav" aria-label="Outros guias">
+      <a href="brancas.html"      class="guide-nav-link active">Brancas</a>
+      <a href="pretas.html"       class="guide-nav-link">Pretas</a>
+      <a href="coloridas.html"    class="guide-nav-link">Coloridas</a>
+      <a href="percarbonato.html" class="guide-nav-link">Percarbonato</a>
+      <a href="toalha.html"       class="guide-nav-link">Toalhas</a>
+      <a href="utensilios.html"   class="guide-nav-link">Utensílios</a>
+    </nav>
+  </div>
+
+  <!-- ── STEPS ── -->
+  <main>
+    <section class="steps-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="section-heading-icon" style="background:#F1F5F9;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+          </div>
+          <h2>Passo a Passo</h2>
+        </div>
+
+        <div class="steps-list">
+
+          <!-- STEP 1 -->
+          <div class="step-item" data-step-id="brancas-1">
+            <div class="step-header">
+              <div class="step-number" style="background:#475569;border-color:#334155;box-shadow:3px 3px 0 #334155;">1</div>
+              <div class="step-completed-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="step-text">
+                <div class="step-title">Conheça o percarbonato de sódio</div>
+                <div class="step-subtitle">O seu novo melhor amigo para roupa branca</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="visual-card" style="background: linear-gradient(135deg, #1E293B, #475569);">
+                <div style="text-align:center; color:white; padding: 20px;">
+                  <div style="font-size:3rem; margin-bottom:8px;">🧪</div>
+                  <div style="font-family:var(--font-heading); font-size:1.4rem; font-weight:700;">Na₂CO₃ · 1.5H₂O₂</div>
+                  <div style="font-size:0.85rem; opacity:0.8; margin-top:4px;">Carbonato de sódio + Água Oxigenada</div>
+                </div>
+              </div>
+              <p class="step-desc">
+                O <strong>percarbonato de sódio</strong> é o ingrediente ativo principal daqueles produtos caros tipo "Oxy Power". É basicamente <em>carbonato de sódio + água oxigenada</em> — a nossa salvadora que tira manchas lindamente.
+              </p>
+              <div class="callout callout--tip">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Compre a granel e economize</div>
+                  <p>Não compre o produto de marca. Pesquise <strong>"percarbonato de sódio"</strong> no Mercado Livre ou Amazon e compre o quilo. Sai muito mais barato que qualquer produto pronto.</p>
+                </div>
+              </div>
+              <div class="callout callout--warning">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Só ativa em água morna ou quente</div>
+                  <p>O percarbonato <strong>só funciona em água morna a quente</strong>. Em água fria ele não ativa direito. Lembre-se disso nos próximos passos!</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="step-item" data-step-id="brancas-2">
+            <div class="step-header">
+              <div class="step-number" style="background:#475569;border-color:#334155;box-shadow:3px 3px 0 #334155;">2</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Prepare o pré-molho</div>
+                <div class="step-subtitle">A etapa mais importante para manchas difíceis</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="visual-card" style="background: linear-gradient(135deg, #0369A1, #0EA5E9);">
+                <div style="text-align:center; color:white; padding:20px;">
+                  <div style="font-size:3rem; margin-bottom:8px;">🫧</div>
+                  <div style="font-family:var(--font-heading); font-size:1.5rem; font-weight:700;">Olha como borbulha!</div>
+                  <div style="font-size:0.85rem; opacity:0.8; margin-top:4px;">O percarbonato ativando em água quente</div>
+                </div>
+              </div>
+              <p class="step-desc">
+                Em uma bacia grande, adicione <strong>2 scoops de percarbonato</strong>, uma <em>meia tampinha de sabão líquido para roupa branca</em> e despeje <strong>água quente a 60°C</strong>. Olhe só como ele começa a borbulhar — é o produto ativando!
+              </p>
+              <div style="display:flex;gap:var(--sp-3);flex-wrap:wrap;margin:var(--sp-4) 0;">
+                <span class="temp-badge temp-hot">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+                  60°C
+                </span>
+                <span class="temp-badge temp-warm">Para estampas plásticas: 40°C máximo</span>
+              </div>
+              <div class="callout callout--tip">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Manchas muito resistentes?</div>
+                  <p>Para manchas antigas que já secaram e estão resistentes: <strong>faça o molho duas vezes</strong>. Troca a água e repete o processo.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="step-item" data-step-id="brancas-3">
+            <div class="step-header">
+              <div class="step-number" style="background:#475569;border-color:#334155;box-shadow:3px 3px 0 #334155;">3</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Coloque as peças e aguarde</div>
+                <div class="step-subtitle">Deixe o produto agir até a manhã seguinte</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Adicione as peças na bacia e complete com o resto da água. <strong>Mexa bem</strong> para que todos os tecidos tenham bastante contato com a mistura. Depois, <em>deixe agir de um dia para o outro</em> — pode deixar até a manhã seguinte sem problema.
+              </p>
+              <div class="callout callout--info">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Quanto tempo deixar?</div>
+                  <p>Mínimo <strong>4-6 horas</strong>. O ideal é deixar overnight (até a manhã seguinte). Para manchas muito antigas, deixe mais tempo.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="step-item" data-step-id="brancas-4">
+            <div class="step-header">
+              <div class="step-number" style="background:#475569;border-color:#334155;box-shadow:3px 3px 0 #334155;">4</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Lavar na máquina corretamente</div>
+                <div class="step-subtitle">Percarbonato na pré-lavagem + sabão branco no tambor</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); margin-bottom: var(--sp-4);">
+                <div style="background:#F0FDF4; border:2px solid #86EFAC; border-radius:var(--radius-md); padding:var(--sp-4); text-align:center;">
+                  <div style="font-size:1.8rem; margin-bottom:6px;">🥄</div>
+                  <div style="font-weight:700; font-size:0.9rem; color:var(--color-primary);">Pré-lavagem</div>
+                  <div style="font-size:0.82rem; color:var(--color-fg-muted); margin-top:4px;">1 scoop de percarbonato</div>
+                </div>
+                <div style="background:#F0F9FF; border:2px solid #BAE6FD; border-radius:var(--radius-md); padding:var(--sp-4); text-align:center;">
+                  <div style="font-size:1.8rem; margin-bottom:6px;">🧺</div>
+                  <div style="font-weight:700; font-size:0.9rem; color:#0284C7;">No tambor</div>
+                  <div style="font-size:0.82rem; color:var(--color-fg-muted); margin-top:4px;">Lencinho branqueador óptico</div>
+                </div>
+              </div>
+              <p class="step-desc">
+                Na compartimento de <strong>pré-lavagem</strong>: coloque um scoop de percarbonato. Na compartimento de <strong>sabão</strong>: sabão líquido para roupa branca. O <em>lencinho branqueador óptico</em> vai direto no tambor da máquina junto com as roupas.
+              </p>
+              <div class="callout callout--product">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Produtos necessários</div>
+                  <div class="product-list">
+                    <span class="product-tag">Percarbonato de sódio</span>
+                    <span class="product-tag">Sabão líquido p/ roupa branca</span>
+                    <span class="product-tag">Lencinho branqueador óptico</span>
+                  </div>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 5 -->
+          <div class="step-item" data-step-id="brancas-5">
+            <div class="step-header">
+              <div class="step-number" style="background:#475569;border-color:#334155;box-shadow:3px 3px 0 #334155;">5</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Temperatura e modo certos</div>
+                <div class="step-subtitle">40°C no modo algodão para ativar o produto</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Para roupas de algodão: lave a <strong>40°C no modo algodão</strong>. Isso ativa o percarbonato na máquina também. <em>Roupas brancas estampadas</em> (com silk ou estampa plástica)? Máximo de 40°C — o plástico pode encolher em temperaturas muito altas.
+              </p>
+              <div style="display:flex;gap:var(--sp-3);flex-wrap:wrap;margin:var(--sp-4) 0 var(--sp-3);">
+                <span class="temp-badge temp-warm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+                  Algodão liso: 40°C
+                </span>
+                <span class="temp-badge temp-warm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+                  Branca estampada: máx. 40°C
+                </span>
+              </div>
+              <div class="callout callout--tip">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Pode usar em roupa colorida?</div>
+                  <p>Sim! O percarbonato pode ser usado em roupas coloridas também. Não tem problema.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 6: Manchas de desodorante -->
+          <div class="step-item" data-step-id="brancas-6">
+            <div class="step-header">
+              <div class="step-number" style="background:#475569;border-color:#334155;box-shadow:3px 3px 0 #334155;">6</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Manchas de desodorante e protetor solar</div>
+                <div class="step-subtitle">A solução que pouca gente conhece</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="science-box">
+                <h4>Por que amarela?</h4>
+                <p>Desodorante tem <strong>alumínio</strong> na composição. Esse alumínio oxida com o suor → vira ferrugem → mancha amarela. É literalmente oxidação de metal — igual ferrugem. A solução? <strong>Tira-ferrugem para tecidos</strong> (marca Semorin tem um específico para tecido).</p>
+              </div>
+              <div class="callout callout--product">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Produto específico</div>
+                  <div class="product-list">
+                    <span class="product-tag">Tira-ferrugem para tecidos (Semorin)</span>
+                  </div>
+                  <p style="margin-top:8px; font-size:0.88rem;">Atenção: a Semorin tem um tira-ferrugem para outros materiais também — use o específico para tecido!</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 7: Caneta antimancha -->
+          <div class="step-item" data-step-id="brancas-7">
+            <div class="step-header">
+              <div class="step-number" style="background:#475569;border-color:#334155;box-shadow:3px 3px 0 #334155;">7</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Caneta antimancha na bolsa</div>
+                <div class="step-subtitle">Para manchas na hora — seu superpoder na rua</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="visual-card" style="background: linear-gradient(135deg, #7C3AED, #A855F7);">
+                <div style="text-align:center; color:white; padding:20px;">
+                  <div style="font-size:3rem; margin-bottom:8px;">✏️</div>
+                  <div style="font-family:var(--font-heading); font-size:1.4rem; font-weight:700;">Caneta Antimancha</div>
+                  <div style="font-size:0.85rem; opacity:0.8; margin-top:4px;">Água oxigenada em formato de caneta</div>
+                </div>
+              </div>
+              <p class="step-desc">
+                A <strong>caneta antimancha</strong> é perfeita para levar na bolsa. Ela tem água oxigenada e uma ponta que você pressiona e esfrega na mancha. O segredo para sua roupa não manchar é <em>se livrar da mancha no momento em que ela acontece</em>. Em casa você tem recursos — na rua, a caneta te salva.
+              </p>
+              <div class="callout callout--tip">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Dica de uso na rua</div>
+                  <p>A roupa vai ficar um pouco molhada depois — isso é normal. Melhor ficar com um ponto transparente por 5 minutos do que uma mancha rosa para sempre.</p>
+                </div>
+              </div>
+              <div class="callout callout--product">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Onde encontrar</div>
+                  <div class="product-list">
+                    <span class="product-tag">De Girl (farmácia Drogaria Venâncio)</span>
+                    <span class="product-tag">Tide To Go (Mercado Livre)</span>
+                  </div>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 8: Secagem -->
+          <div class="step-item" data-step-id="brancas-8">
+            <div class="step-header">
+              <div class="step-number" style="background:#475569;border-color:#334155;box-shadow:3px 3px 0 #334155;">8</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Secagem e proibições</div>
+                <div class="step-subtitle">O que nunca fazer com roupa branca</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Roupa branca pode secar no sol — mas evite <strong>sol direto por muito tempo</strong> pois o raio UV danifica o tecido (o mesmo raio que causa câncer de pele destrói as células do tecido). Secar na <em>sombra ou meia-sombra</em> é o ideal.
+              </p>
+              <div class="callout callout--warning">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Nunca use cloro!</div>
+                  <p>Cloro destrói o tecido. O percarbonato faz a mesma função branqueadora <strong>sem danificar o tecido</strong>. Para que usar cloro se você tem o percarbonato?</p>
+                </div>
+              </div>
+              <div class="callout callout--warning">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Evite a secadora</div>
+                  <p>A secadora danifica tecidos naturais. Se precisar usar, aceite que a roupa vai durar menos. Escolha suas batalhas.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+        </div><!-- /steps-list -->
+
+        <!-- ── COMPLETION BANNER ── -->
+        <div class="completion-banner" id="completionBanner">
+          <span class="completion-emoji">🌟</span>
+          <h2>Mandou bem!</h2>
+          <p>Você terminou o guia de roupas brancas. Suas roupas vão agradecer!</p>
+          <div class="completion-actions">
+            <a href="index.html" class="btn btn-white btn-lg">Ver todos os guias</a>
+            <a href="percarbonato.html" class="btn btn-white-outline btn-lg">Guia do percarbonato →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        <a href="index.html">← Voltar para todos os guias</a>
+        &nbsp;·&nbsp;
+        Feito com carinho para suas roupas durarem mais
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Inline helper for onclick — delegates to guide.js markDone
+    function markStepDone(btn) {
+      const step = btn.closest('.step-item');
+      const isDone = step.classList.contains('completed');
+      if (typeof markDone === 'function') markDone(step, !isDone);
+    }
+  </script>
+  <script src="js/guide.js"></script>
+</body>
+</html>

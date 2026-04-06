@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roupas Pretas — Lavar Roupa</title>
+  <meta name="description" content="Como lavar roupas pretas para ficarem pretas por mais tempo, brilhantes e durarem mais.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/guide.css">
+  <style>
+    :root {
+      --guide-primary:  #1E293B;
+      --guide-dark:     #0F172A;
+      --guide-light:    #334155;
+      --guide-gradient: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%);
+      --step-color:     #1E293B;
+    }
+
+    .guide-hero { background: var(--guide-gradient); }
+    .hero-blob  { background: #475569; }
+
+    .guide-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle at 15% 85%, rgba(99,102,241,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 85% 15%, rgba(139,92,246,0.1) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .dark-card {
+      background: linear-gradient(135deg, #0F172A, #1E293B);
+      border: 2px solid #334155;
+      border-radius: var(--radius-md);
+      padding: var(--sp-4) var(--sp-5);
+      color: white;
+      margin: var(--sp-4) 0;
+    }
+
+    .dark-card h4 { font-family: var(--font-heading); font-size: 1.35rem; color: #93C5FD; margin-bottom: var(--sp-3); }
+    .dark-card p  { font-size: 0.93rem; color: rgba(255,255,255,0.85); line-height: 1.65; }
+    .dark-card strong { color: #FCD34D; }
+
+    .guide-nav {
+      display: flex; gap: var(--sp-2); overflow-x: auto;
+      padding: var(--sp-4) 0; scrollbar-width: none;
+    }
+    .guide-nav::-webkit-scrollbar { display: none; }
+    .guide-nav-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: var(--sp-2) var(--sp-4);
+      background: var(--color-surface); border: 2px solid var(--color-border-dark);
+      border-radius: var(--radius-full); font-size: 0.82rem; font-weight: 600;
+      color: var(--color-fg-muted); white-space: nowrap;
+      transition: all var(--transition-fast); box-shadow: 2px 2px 0px var(--color-border-dark);
+    }
+    .guide-nav-link:hover { background: var(--color-muted); color: var(--color-fg); }
+    .guide-nav-link.active { background: var(--color-primary); color: white; border-color: var(--color-primary-dark); }
+
+    .contrast-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3);
+      margin: var(--sp-4) 0;
+    }
+    .contrast-do {
+      background: #F0FDF4; border: 2px solid #86EFAC;
+      border-radius: var(--radius-md); padding: var(--sp-4);
+    }
+    .contrast-dont {
+      background: #FEF2F2; border: 2px solid #FECACA;
+      border-radius: var(--radius-md); padding: var(--sp-4);
+    }
+    .contrast-label {
+      font-weight: 700; font-size: 0.8rem; text-transform: uppercase;
+      letter-spacing: 0.05em; margin-bottom: var(--sp-2);
+    }
+    .contrast-do .contrast-label   { color: var(--color-success); }
+    .contrast-dont .contrast-label { color: var(--color-error); }
+    .contrast-do p, .contrast-dont p { font-size: 0.88rem; color: var(--color-fg); line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+  <div class="guide-hero">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
+    <div class="container">
+      <a href="index.html" class="hero-back-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Voltar para guias
+      </a>
+      <div class="guide-hero-inner">
+        <div class="guide-hero-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>
+        </div>
+        <div class="guide-hero-text">
+          <h1>Roupas Pretas</h1>
+          <p>Para o preto sempre vivo, brilhante e sem desbotar. O guia definitivo para roupas escuras que duram.</p>
+          <div class="guide-tags">
+            <span class="guide-tag">8 passos</span>
+            <span class="guide-tag">Lavar a 20°C</span>
+            <span class="guide-tag">Lencinho tingidor</span>
+            <span class="guide-tag">Sem amaciante</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress-sticky">
+    <div class="container">
+      <div class="progress-inner">
+        <div class="progress-track-wrap">
+          <div class="progress-fill" id="progressFill" style="background: linear-gradient(90deg, #1E293B, #475569);"></div>
+        </div>
+        <div class="progress-text-wrap">
+          <span class="progress-pct" id="progressPct">0%</span>
+          <span class="progress-steps-txt" id="progressSteps">0 de 8</span>
+        </div>
+        <button class="reset-btn" id="resetBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-5.1"/></svg>
+          Reiniciar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <nav class="guide-nav">
+      <a href="brancas.html"      class="guide-nav-link">Brancas</a>
+      <a href="pretas.html"       class="guide-nav-link active">Pretas</a>
+      <a href="coloridas.html"    class="guide-nav-link">Coloridas</a>
+      <a href="percarbonato.html" class="guide-nav-link">Percarbonato</a>
+      <a href="toalha.html"       class="guide-nav-link">Toalhas</a>
+      <a href="utensilios.html"   class="guide-nav-link">Utensílios</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="steps-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="section-heading-icon" style="background:#1E293B;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>
+          </div>
+          <h2>Passo a Passo</h2>
+        </div>
+
+        <div class="steps-list">
+
+          <!-- 1 -->
+          <div class="step-item" data-step-id="pretas-1">
+            <div class="step-header">
+              <div class="step-number" style="background:#1E293B;border-color:#0F172A;box-shadow:3px 3px 0 #0F172A;">1</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Sempre vire do avesso</div>
+                <div class="step-subtitle">A regra número um para roupas pretas</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="visual-card" style="background: linear-gradient(135deg, #1E293B, #0F172A);">
+                <div style="text-align:center; color:white; padding:20px;">
+                  <div style="font-size:3rem; margin-bottom:8px;">🔄</div>
+                  <div style="font-family:var(--font-heading); font-size:1.4rem; font-weight:700;">Sempre do avesso!</div>
+                  <div style="font-size:0.85rem; opacity:0.7; margin-top:4px;">Antes de colocar na máquina</div>
+                </div>
+              </div>
+              <p class="step-desc">
+                <strong>Sempre</strong> vire sua roupa preta do avesso antes de colocar na máquina. Isso protege a parte externa do tecido do atrito, prolonga a vida da estampa e preserva a fibra do tecido. Lavar é danificar — você vai danificar menos o lado que importa.
+              </p>
+              <div class="callout callout--info">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Por que a máquina danifica?</div>
+                  <p>A máquina fica batendo o tecido durante todo o ciclo. Quanto mais você lavar e quanto mais quente a água, mais rápido o tecido se deteriora. Vire do avesso e use água fria para minimizar esse dano.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="step-item" data-step-id="pretas-2">
+            <div class="step-header">
+              <div class="step-number" style="background:#1E293B;border-color:#0F172A;box-shadow:3px 3px 0 #0F172A;">2</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Sabão específico para roupa preta</div>
+                <div class="step-subtitle">Nunca use sabão genérico — ele tem branqueador óptico</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Compre um <strong>sabão líquido específico para roupa preta e escura</strong>. O sabão genérico tem um pouco de branqueador óptico — e branqueador óptico vai branquear sua roupa preta. Você não quer isso. Use <em>muito menos sabão do que imagina</em> — já é suficiente para lavar.
+              </p>
+              <div class="contrast-grid">
+                <div class="contrast-do">
+                  <div class="contrast-label">✓ Use</div>
+                  <p>Sabão específico para roupa preta/escura (ex: Omom, Comfort Dark, Persil Black)</p>
+                </div>
+                <div class="contrast-dont">
+                  <div class="contrast-label">✗ Evite</div>
+                  <p>Sabão genérico, sabão para roupa branca ou qualquer um com "branqueador óptico" na embalagem</p>
+                </div>
+              </div>
+              <div class="callout callout--tip">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Use menos sabão do que você acha</div>
+                  <p>A maioria das pessoas usa sabão em excesso. Menos sabão = melhor enxágue = roupa mais limpa e que dura mais.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="step-item" data-step-id="pretas-3">
+            <div class="step-header">
+              <div class="step-number" style="background:#1E293B;border-color:#0F172A;box-shadow:3px 3px 0 #0F172A;">3</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">O lencinho tingidor para roupa preta</div>
+                <div class="step-subtitle">O truque que revive roupas desbotadas</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="visual-card" style="background: linear-gradient(135deg, #312E81, #4338CA);">
+                <div style="text-align:center; color:white; padding:20px;">
+                  <div style="font-size:3rem; margin-bottom:8px;">🎽</div>
+                  <div style="font-family:var(--font-heading); font-size:1.4rem; font-weight:700;">Lencinho tingidor</div>
+                  <div style="font-size:0.85rem; opacity:0.8; margin-top:4px;">Vai direto no tambor com a roupa</div>
+                </div>
+              </div>
+              <p class="step-desc">
+                Os <strong>lencinhos para roupa preta</strong> vão direto no tambor da máquina junto com as roupas. Eles soltam pigmento preto que re-tinge o tecido enquanto lava. Funciona em qualquer temperatura. Para roupas muito desbotadas: <em>use 3 lencinhos na primeira lavagem</em> para dar uma revivida intensa.
+              </p>
+              <div class="callout callout--warning">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Cuidado: estampa ≠ padronagem</div>
+                  <p><strong>Estampa</strong> (silk, plástico por cima): pode usar o lencinho — o plástico não absorve a tinta e o fundo preto fica mais vivo.<br><br><strong>Padronagem</strong> (xadrez, listras feitas no próprio tecido): NÃO use o lencinho — vai tingir os fios brancos/claros de azul.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="step-item" data-step-id="pretas-4">
+            <div class="step-header">
+              <div class="step-number" style="background:#1E293B;border-color:#0F172A;box-shadow:3px 3px 0 #0F172A;">4</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Lavar na temperatura mais fria</div>
+                <div class="step-subtitle">20°C — o frio protege a cor preta</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="dark-card">
+                <h4>A ciência da cor e temperatura</h4>
+                <p>O tecido é uma <strong>trama de fibras</strong>. Quando você coloca água quente, você "abre" essa trama. No tecido preto, quando essa trama se abre, o pigmento preto escapa — é assim que a roupa desbota. Lavar em <strong>água fria (20°C)</strong> mantém a trama fechada e o pigmento preso nas fibras.</p>
+              </div>
+              <div style="display:flex;gap:var(--sp-3);flex-wrap:wrap;margin:var(--sp-4) 0;">
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:#EFF6FF;border:2px solid #BAE6FD;border-radius:9999px;font-weight:700;font-size:0.9rem;color:#0284C7;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+                  20°C — ideal para pretas
+                </span>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="step-item" data-step-id="pretas-5">
+            <div class="step-header">
+              <div class="step-number" style="background:#1E293B;border-color:#0F172A;box-shadow:3px 3px 0 #0F172A;">5</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Adeus, amaciante!</div>
+                <div class="step-subtitle">Um minuto de silêncio pelo amaciante</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="visual-card" style="background: linear-gradient(135deg, #7F1D1D, #DC2626);">
+                <div style="text-align:center; color:white; padding:20px;">
+                  <div style="font-size:3rem; margin-bottom:8px;">🚫</div>
+                  <div style="font-family:var(--font-heading); font-size:1.5rem; font-weight:700;">Funeral do Amaciante</div>
+                  <div style="font-size:0.85rem; opacity:0.8; margin-top:4px;">Ele estava destruindo suas roupas</div>
+                </div>
+              </div>
+              <p class="step-desc">
+                <strong>Pare de usar amaciante.</strong> O amaciante distrai a fibra do tecido — ele cria uma película que impede o tecido de respirar e danifica as fibras com o tempo. Use <em>bolinhas de cheiro</em> se quiser perfume: elas vão direto no tambor, soltam o cheiro na água e vão embora sem deixar resíduo.
+              </p>
+              <div class="callout callout--warning">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">E o vinagre de álcool?</div>
+                  <p>O vinagre funciona como amaciante para toalhas, mas cuidado: é ácido acético. Usar regularmente na máquina pode danificar as borrachas e peças internas a longo prazo.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="step-item" data-step-id="pretas-6">
+            <div class="step-header">
+              <div class="step-number" style="background:#1E293B;border-color:#0F172A;box-shadow:3px 3px 0 #0F172A;">6</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Quer cheiro? Use bolinhas de perfume</div>
+                <div class="step-subtitle">A alternativa inteligente ao amaciante</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                As <strong>bolinhas de cheiro</strong> (scent beads/perlen) vão direto no tambor da máquina. Elas não são amaciante — são literalmente perfume sólido. Dissolvem na água, liberam o aroma e vão embora. Não deixam resíduo, não danificam o tecido.
+              </p>
+              <div class="callout callout--product">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Onde encontrar</div>
+                  <div class="product-list">
+                    <span class="product-tag">Lenor Unstoppables (Mercado Livre)</span>
+                    <span class="product-tag">Bolinhas de aroma (supermercados importados)</span>
+                  </div>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="step-item" data-step-id="pretas-7">
+            <div class="step-header">
+              <div class="step-number" style="background:#1E293B;border-color:#0F172A;box-shadow:3px 3px 0 #0F172A;">7</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Secar na sombra, nunca no sol</div>
+                <div class="step-subtitle">O raio UV destrói a cor preta</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                <strong>Nunca seque roupas pretas diretamente no sol.</strong> O raio UV que causa câncer de pele é o mesmo raio que destrói o pigmento preto do tecido. Seque sempre na <em>sombra ou num local coberto e arejado</em>. Também não use secadora — tecidos naturais encolhem.
+              </p>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div class="step-item" data-step-id="pretas-8">
+            <div class="step-header">
+              <div class="step-number" style="background:#1E293B;border-color:#0F172A;box-shadow:3px 3px 0 #0F172A;">8</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Lave menos, preserve mais</div>
+                <div class="step-subtitle">A estratégia de quem entende de tecido</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                <strong>Lavar é danificar.</strong> Sempre que puder, evite lavar uma peça inteira só por uma manchinha — trate especificamente a mancha à mão. Deu um mau cheiro? Lave à mão rapidinho. Só coloque na máquina quando realmente precisar de uma lavagem completa. Isso dobra a vida útil da sua roupa.
+              </p>
+              <div class="callout callout--tip">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Resumo das regras de ouro</div>
+                  <p>
+                    ✓ Avesso<br>
+                    ✓ Sabão específico para pretas<br>
+                    ✓ Lencinho tingidor no tambor<br>
+                    ✓ 20°C (água fria)<br>
+                    ✓ Sem amaciante<br>
+                    ✓ Secar na sombra
+                  </p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="completion-banner" id="completionBanner">
+          <span class="completion-emoji">🖤</span>
+          <h2>Preto sempre vivo!</h2>
+          <p>Você dominou o guia de roupas pretas. Sua gotiquinha vai adorar.</p>
+          <div class="completion-actions">
+            <a href="index.html" class="btn btn-white btn-lg">Ver todos os guias</a>
+            <a href="coloridas.html" class="btn btn-white-outline btn-lg">Guia de coloridas →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><a href="index.html">← Voltar para todos os guias</a> · Feito com carinho</p>
+    </div>
+  </footer>
+
+  <script>
+    function markStepDone(btn) {
+      const step = btn.closest('.step-item');
+      const isDone = step.classList.contains('completed');
+      if (typeof markDone === 'function') markDone(step, !isDone);
+    }
+  </script>
+  <script src="js/guide.js"></script>
+</body>
+</html>

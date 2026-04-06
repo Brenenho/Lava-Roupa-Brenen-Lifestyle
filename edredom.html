@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edredom & Cobertores — LavanTech</title>
+  <meta name="description" content="Guia completo para lavar edredons e cobertores sem embolotoar o enchimento, sem encolher e sem destruir as fibras.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/guide.css">
+  <style>
+    :root {
+      --guide-primary:  #EC4899;
+      --guide-dark:     #BE185D;
+      --guide-light:    #F9A8D4;
+      --guide-gradient: linear-gradient(135deg, #3B0764 0%, #701A75 40%, #BE185D 100%);
+      --step-color:     #DB2777;
+    }
+
+    .guide-hero { background: var(--guide-gradient); }
+    .hero-blob  { background: #F9A8D4; }
+
+    .guide-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 80%, rgba(249,168,212,0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(167,139,250,0.08) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .step-number {
+      background: linear-gradient(135deg, #DB2777, #BE185D);
+      border-color: rgba(249,168,212,0.4);
+      box-shadow: 0 4px 12px rgba(219,39,119,0.35);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Guide Hero -->
+  <div class="guide-hero">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
+
+    <div class="container">
+      <a href="index.html" class="hero-back-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Voltar
+      </a>
+
+      <div class="guide-hero-icon">🪶</div>
+
+      <h1 class="guide-hero-title">Edredom & Cobertores</h1>
+      <p class="guide-hero-subtitle">
+        Edredons exigem atenção especial ao peso, ao tipo de enchimento e à temperatura.
+        Lavar errado pode embolotoar o enchimento de forma permanente — e nunca mais volta ao normal.
+      </p>
+
+      <div class="guide-hero-meta">
+        <span class="guide-meta-pill">🪶 8 passos</span>
+        <span class="guide-meta-pill">❄️ 30°C máx.</span>
+        <span class="guide-meta-pill">⚖️ 1 peça por vez</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <main>
+    <div class="container">
+
+      <!-- Nav -->
+      <div class="guide-nav">
+        <a href="brancas.html"     class="guide-nav-link">🤍 Brancas</a>
+        <a href="pretas.html"      class="guide-nav-link">🖤 Pretas</a>
+        <a href="coloridas.html"   class="guide-nav-link">🌈 Coloridas</a>
+        <a href="percarbonato.html"class="guide-nav-link">🌿 Percarbonato</a>
+        <a href="toalha.html"      class="guide-nav-link">🛁 Toalhas</a>
+        <a href="cama.html"        class="guide-nav-link">🛏️ Cama</a>
+        <a href="edredom.html"     class="guide-nav-link active">🪶 Edredom</a>
+        <a href="utensilios.html"  class="guide-nav-link">🔧 Utensílios</a>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-wrapper">
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <span class="progress-label" id="progressLabel">0 de 8 passos</span>
+      </div>
+
+      <!-- Warning -->
+      <div class="callout callout--warning" style="margin-top:var(--sp-6);">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div>
+          <div class="callout-title">Atenção antes de começar</div>
+          <p>Edredons pesados (queen/king) podem exceder a capacidade da máquina doméstica. Verifique: a maioria das máquinas de 8–10kg aguenta edredons de solteiro e casal. Para queen e king, prefira lavanderia self-service com máquinas maiores.</p>
+        </div>
+      </div>
+
+      <!-- Steps -->
+      <div class="section-divider">
+        <div class="section-divider-line"></div>
+        <span class="section-label">Passo a passo</span>
+        <div class="section-divider-line"></div>
+      </div>
+
+      <div class="steps-list">
+
+        <!-- Passo 1 -->
+        <div class="step-item" data-step-id="edredom-1">
+          <div class="step-header">
+            <div class="step-number">1</div>
+            <div class="step-completed-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="step-text">
+              <div class="step-title">Verifique a etiqueta e o tipo de enchimento</div>
+              <div class="step-subtitle">Fibra sintética, pluma, lã ou microfibra — cada um tem regra</div>
+            </div>
+            <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="step-body">
+            <div class="step-desc">
+              <strong>Fibra sintética (poliéster)</strong>: pode lavar em máquina com água fria (30°C), ciclo delicado. <strong>Pluma e pena natural (duck/goose down)</strong>: exige ciclo delicado obrigatório, água fria, e atenção redobrada na secagem — molhada, a pluma emplasta e demora a desfazer. <strong>Lã ou algodão</strong>: verifique a etiqueta — muitos exigem lavagem manual. Se não houver etiqueta ou se diz "apenas lavagem a seco", não arrisque em máquina.
+            </div>
+            <label class="step-done-label">
+              <input type="checkbox" class="step-checkbox">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+              <span>Marcar como feito</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Passo 2 -->
+        <div class="step-item" data-step-id="edredom-2">
+          <div class="step-header">
+            <div class="step-number">2</div>
+            <div class="step-completed-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="step-text">
+              <div class="step-title">Verifique a capacidade da máquina</div>
+              <div class="step-subtitle">Peso seco ≠ peso molhado — a diferença é enorme</div>
+            </div>
+            <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="step-body">
+            <div class="step-desc">
+              Um edredom de solteiro pesa ~1–1,5kg seco, mas absorve água e pode chegar a <strong>3–4kg molhado</strong>. Um edredom king pode ultrapassar facilmente os 6–7kg molhado. Regra geral: use no máximo <strong>70% da capacidade máxima da máquina</strong> para peças volumosas. A máquina precisa de espaço para agitar e enxaguar bem — se estiver muito cheia, o edredom sai com resíduo de sabão que vai causar cheiro e irritação de pele.
+            </div>
+            <label class="step-done-label">
+              <input type="checkbox" class="step-checkbox">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+              <span>Marcar como feito</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Passo 3 -->
+        <div class="step-item" data-step-id="edredom-3">
+          <div class="step-header">
+            <div class="step-number">3</div>
+            <div class="step-completed-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="step-text">
+              <div class="step-title">Lave sempre sozinho — nunca junto com outras peças</div>
+              <div class="step-subtitle">O volume impede que outras roupas sejam lavadas direito</div>
+            </div>
+            <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="step-body">
+            <div class="step-desc">
+              Edredons ocupam toda a capacidade da máquina. Colocar outras peças junto vai fazer com que nada seja lavado direito — o edredom não agita bem, as roupas ficam comprimidas sem circular pela água, e o resultado é uma lavagem superficial em tudo. Além disso, o movimento desequilibrado pode danificar a máquina.
+            </div>
+            <label class="step-done-label">
+              <input type="checkbox" class="step-checkbox">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+              <span>Marcar como feito</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Passo 4 -->
+        <div class="step-item" data-step-id="edredom-4">
+          <div class="step-header">
+            <div class="step-number">4</div>
+            <div class="step-completed-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="step-text">
+              <div class="step-title">Use apenas água fria ou morna (máx. 30°C)</div>
+              <div class="step-subtitle">Calor destrói o enchimento e encolhe a capa</div>
+            </div>
+            <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="step-body">
+            <div class="step-desc">
+              Temperatura alta faz o enchimento sintético empestar e grudar — as bolinhas de fibra se aglomeram e nunca mais voltam a ficar fofas. Em edredons de pluma, o calor danifica as penas e reduz muito o poder de aquecimento. <strong>30°C é o máximo seguro</strong> para qualquer tipo de enchimento. Ciclo delicado sempre — a agitação suave preserva a distribuição uniforme do enchimento.
+            </div>
+            <div class="callout callout--tip">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <div>
+                <div class="callout-title">Dica importante</div>
+                <p>Se quiser eliminar ácaros e não puder usar calor, coloque o edredom lavado em saco plástico e deixe no freezer por 48h — o frio intenso também mata os ácaros.</p>
+              </div>
+            </div>
+            <label class="step-done-label">
+              <input type="checkbox" class="step-checkbox">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+              <span>Marcar como feito</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Passo 5 -->
+        <div class="step-item" data-step-id="edredom-5">
+          <div class="step-header">
+            <div class="step-number">5</div>
+            <div class="step-completed-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="step-text">
+              <div class="step-title">Use pouco detergente — bem menos do que você pensa</div>
+              <div class="step-subtitle">Excesso fica preso no enchimento e é difícil enxaguar</div>
+            </div>
+            <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="step-body">
+            <div class="step-desc">
+              Use <strong>apenas 40–60ml de sabão líquido neutro</strong> — de preferência um específico para delicados. A espuma gerada pelo excesso de detergente fica presa nas camadas de enchimento e não sai com um enxague normal. O resultado é um edredom que parece limpo mas está cheio de resíduo — que vai provocar cheiro e atrair mais sujeira. Nunca use sabão em pó em edredons.
+            </div>
+            <div class="callout callout--product">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+              <div>
+                <div class="callout-title">Produtos por lavagem (fixo, independente do tamanho)</div>
+                <p>🧴 Sabão delicados: <strong>40–60ml</strong> &nbsp;|&nbsp; 🌸 Amaciante: <strong>30–40ml</strong> &nbsp;|&nbsp; 🚫 Sem percarbonato (danifica o enchimento)</p>
+              </div>
+            </div>
+            <label class="step-done-label">
+              <input type="checkbox" class="step-checkbox">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+              <span>Marcar como feito</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Passo 6 -->
+        <div class="step-item" data-step-id="edredom-6">
+          <div class="step-header">
+            <div class="step-number">6</div>
+            <div class="step-completed-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="step-text">
+              <div class="step-title">Faça ciclo de enxague extra</div>
+              <div class="step-subtitle">Garante que todo o sabão foi removido do enchimento</div>
+            </div>
+            <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="step-body">
+            <div class="step-desc">
+              Se a sua máquina tiver a opção, sempre programe um <strong>segundo enxague</strong> ao lavar edredons. O volume do enchimento retém muito mais água com sabão do que roupas comuns, e um único enxague raramente é suficiente. Após o ciclo, esprema levemente o edredom com as mãos para sentir se ainda há espuma saindo — se houver, repita o enxague manualmente.
+            </div>
+            <label class="step-done-label">
+              <input type="checkbox" class="step-checkbox">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+              <span>Marcar como feito</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Passo 7 -->
+        <div class="step-item" data-step-id="edredom-7">
+          <div class="step-header">
+            <div class="step-number">7</div>
+            <div class="step-completed-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="step-text">
+              <div class="step-title">Seque completamente — pode levar horas</div>
+              <div class="step-subtitle">Edredom úmido por dentro = foco de fungos e cheiro permanente</div>
+            </div>
+            <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="step-body">
+            <div class="step-desc">
+              Estenda o edredom <strong>aberto horizontalmente</strong>, se possível, para o enchimento secar de forma uniforme. Em varanda ou área externa, a circulação de ar seca muito mais rápido. Durante a secagem, <strong>mexa e sacuda o edredom a cada hora</strong> para redistribuir o enchimento e evitar que ele fique comprimido em um canto. Verifique apertando com as mãos em diferentes partes — não deve haver partes frias ou pesadas. O processo pode levar de 4 a 8 horas, dependendo do tamanho e tipo de enchimento.
+            </div>
+            <div class="callout callout--info">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <div>
+                <div class="callout-title">Usando secadora</div>
+                <p>Coloque 2–3 bolas de tênis ou bolas de secagem junto com o edredom — elas batem no enchimento durante o ciclo e evitam que ele fique embolotado. Use calor baixo e ciclos de 30 minutos, sacudindo entre eles.</p>
+              </div>
+            </div>
+            <label class="step-done-label">
+              <input type="checkbox" class="step-checkbox">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+              <span>Marcar como feito</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Passo 8 -->
+        <div class="step-item" data-step-id="edredom-8">
+          <div class="step-header">
+            <div class="step-number">8</div>
+            <div class="step-completed-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="step-text">
+              <div class="step-title">Guarde corretamente quando não estiver usando</div>
+              <div class="step-subtitle">Nunca em saco plástico fechado — o enchimento precisa respirar</div>
+            </div>
+            <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="step-body">
+            <div class="step-desc">
+              Guarde edredons em <strong>sacos de algodão respiráveis</strong> ou embrulhados em lençol — nunca em sacos plásticos fechados, pois a falta de circulação de ar cria umidade e favorece o crescimento de fungos. Não comprima o edredom com vácuo por longos períodos — o enchimento pode perder a capacidade de se expandir depois. Lave o edredom <strong>pelo menos 2 vezes por ano</strong>, mesmo sem uso frequente, pois ele acumula pó e odores no armário.
+            </div>
+            <label class="step-done-label">
+              <input type="checkbox" class="step-checkbox">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+              <span>Marcar como feito</span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Completion banner -->
+      <div class="completion-banner" id="completionBanner">
+        <span class="confetti-emoji">🪶</span>
+        <h2>Edredom lavado com maestria!</h2>
+        <p>Quando secar completamente, seu edredom vai estar fofo, cheiroso e pronto para noites quentinhas e aconchegantes.</p>
+      </div>
+
+      <!-- Reset -->
+      <div style="text-align:center;margin-top:var(--sp-6);">
+        <button id="resetBtn" class="btn btn-ghost btn-sm">Reiniciar progresso</button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>🫧 <a href="index.html">LavanTech</a> — Feito com carinho para suas roupas durarem muito mais.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

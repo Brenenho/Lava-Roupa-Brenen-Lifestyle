@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Percarbonato de Sódio — Lavar Roupa</title>
+  <meta name="description" content="Como usar o percarbonato de sódio para tirar manchas difíceis. Tutorial passo a passo.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/guide.css">
+  <style>
+    .guide-hero { background: linear-gradient(135deg, #14532D 0%, #15803D 50%, #16A34A 100%); }
+    .hero-blob { background: rgba(255,255,255,0.25); }
+
+    .guide-nav { display:flex; gap:var(--sp-2); overflow-x:auto; padding:var(--sp-4) 0; scrollbar-width:none; }
+    .guide-nav::-webkit-scrollbar { display:none; }
+    .guide-nav-link { display:inline-flex; align-items:center; gap:6px; padding:var(--sp-2) var(--sp-4); background:var(--color-surface); border:2px solid var(--color-border-dark); border-radius:var(--radius-full); font-size:0.82rem; font-weight:600; color:var(--color-fg-muted); white-space:nowrap; transition:all var(--transition-fast); box-shadow:2px 2px 0px var(--color-border-dark); }
+    .guide-nav-link:hover { background:var(--color-muted); color:var(--color-fg); }
+    .guide-nav-link.active { background:var(--color-primary); color:white; border-color:var(--color-primary-dark); }
+
+    .bubble-animation {
+      display: flex;
+      gap: 8px;
+      align-items: flex-end;
+      height: 60px;
+    }
+    .bubble {
+      border-radius: 50%;
+      background: rgba(34,197,94,0.6);
+      animation: bubbleRise 1.5s ease-in-out infinite;
+    }
+    .bubble:nth-child(1) { width:12px; height:12px; animation-delay:0s; }
+    .bubble:nth-child(2) { width:18px; height:18px; animation-delay:0.3s; }
+    .bubble:nth-child(3) { width:10px; height:10px; animation-delay:0.6s; }
+    .bubble:nth-child(4) { width:16px; height:16px; animation-delay:0.9s; }
+    .bubble:nth-child(5) { width:8px;  height:8px;  animation-delay:1.2s; }
+    @keyframes bubbleRise {
+      0%,100% { transform: translateY(0); opacity: 0.8; }
+      50%      { transform: translateY(-20px); opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="guide-hero">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="container">
+      <a href="index.html" class="hero-back-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Voltar para guias
+      </a>
+      <div class="guide-hero-inner">
+        <div class="guide-hero-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+        </div>
+        <div class="guide-hero-text">
+          <h1>Percarbonato de Sódio</h1>
+          <p>Como usar o ingrediente mágico que tira sombra azul, batom vermelho e qualquer mancha difícil — sem esforço.</p>
+          <div class="guide-tags">
+            <span class="guide-tag">9 passos</span>
+            <span class="guide-tag">Molho overnight</span>
+            <span class="guide-tag">40°C para ativar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress-sticky">
+    <div class="container">
+      <div class="progress-inner">
+        <div class="progress-track-wrap">
+          <div class="progress-fill" id="progressFill" style="background: linear-gradient(90deg, #14532D, #22C55E);"></div>
+        </div>
+        <div class="progress-text-wrap">
+          <span class="progress-pct" id="progressPct">0%</span>
+          <span class="progress-steps-txt" id="progressSteps">0 de 9</span>
+        </div>
+        <button class="reset-btn" id="resetBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-5.1"/></svg>
+          Reiniciar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <nav class="guide-nav">
+      <a href="brancas.html"      class="guide-nav-link">Brancas</a>
+      <a href="pretas.html"       class="guide-nav-link">Pretas</a>
+      <a href="coloridas.html"    class="guide-nav-link">Coloridas</a>
+      <a href="percarbonato.html" class="guide-nav-link active">Percarbonato</a>
+      <a href="toalha.html"       class="guide-nav-link">Toalhas</a>
+      <a href="utensilios.html"   class="guide-nav-link">Utensílios</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="steps-section">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-heading-icon" style="background:var(--color-success-light);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+          </div>
+          <h2>Tutorial Completo</h2>
+        </div>
+
+        <div class="steps-list">
+
+          <!-- 1 -->
+          <div class="step-item" data-step-id="perc-1">
+            <div class="step-header">
+              <div class="step-number">1</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Prepare a bacia</div>
+                <div class="step-subtitle">Onde a mágica vai acontecer</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Pegue uma <strong>bacia grande</strong> — ela precisa comportar todas as peças que você quer tratar mais um bom volume de água. Certifique-se de que está limpa antes de começar.
+              </p>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="step-item" data-step-id="perc-2">
+            <div class="step-header">
+              <div class="step-number">2</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Adicione 2 scoops de percarbonato</div>
+                <div class="step-subtitle">A dosagem certa para uma bacia cheia</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Adicione <strong>2 scoops (colheres medidoras)</strong> de percarbonato diretamente na bacia. Se você não tem scoop, use 2 colheres de sopa cheias.
+              </p>
+              <div class="callout callout--tip">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Manchas muito resistentes</div>
+                  <p>Para manchas antigas e resistentes, você pode dobrar a dosagem: <strong>4 scoops</strong>. E se ainda assim não sair, faça o molho duas vezes.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="step-item" data-step-id="perc-3">
+            <div class="step-header">
+              <div class="step-number">3</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Adicione sabão líquido para roupa branca</div>
+                <div class="step-subtitle">Potencializa a ação do percarbonato</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Adicione <strong>meia tampinha de sabão líquido para roupa branca</strong> na bacia. O sabão ajuda a surfactear (carregar as partículas de sujeira para a água) enquanto o percarbonato trata as manchas.
+              </p>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="step-item" data-step-id="perc-4">
+            <div class="step-header">
+              <div class="step-number">4</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Despeje água quente para ativar</div>
+                <div class="step-subtitle">Olha só como começa a borbulhar! ✨</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="visual-card" style="background:linear-gradient(135deg,#064E3B,#065F46);">
+                <div style="text-align:center; color:white; padding:20px;">
+                  <div class="bubble-animation" style="justify-content:center;">
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                  </div>
+                  <div style="font-family:var(--font-heading); font-size:1.4rem; font-weight:700; margin-top:12px;">Percarbonato ativando!</div>
+                  <div style="font-size:0.85rem; opacity:0.8; margin-top:4px;">Borbulhas = produto funcionando</div>
+                </div>
+              </div>
+              <p class="step-desc">
+                Despeje um pouco de <strong>água quente</strong> (pode ser da torneira quente, ou esquentar numa chaleira) sobre o percarbonato e sabão. Você vai ver as <em>borbulhas aparecerem</em> — isso é o sinal de que o produto está ativando e liberando o peróxido de hidrogênio.
+              </p>
+              <div class="callout callout--warning">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Temperatura é crucial</div>
+                  <p>Sem água quente, o percarbonato <strong>não ativa</strong>. Água fria = produto ineficiente. Precisa de calor para liberar o agente ativo.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="step-item" data-step-id="perc-5">
+            <div class="step-header">
+              <div class="step-number">5</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Coloque as peças e complete com água</div>
+                <div class="step-subtitle">Garanta que tudo fique submerso</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Coloque todas as peças na bacia e complete com o <strong>resto da água</strong> (pode ser água morna/temperatura ambiente agora). Certifique-se de que todas as peças estão completamente submersas na solução.
+              </p>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="step-item" data-step-id="perc-6">
+            <div class="step-header">
+              <div class="step-number">6</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Mexa bem e aguarde overnight</div>
+                <div class="step-subtitle">Deixe a química trabalhar enquanto você dorme</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Mexa a mistura com a mão ou uma colher para que todos os tecidos tenham <strong>bastante contato com a solução</strong>. Depois, deixe agir <em>até a manhã seguinte</em>. A ação contínua do peróxido ao longo da noite é o que tira manchas difíceis sem precisar esfregar.
+              </p>
+              <div style="background:#F0FDF4;border:2px solid #86EFAC;border-radius:var(--radius-md);padding:var(--sp-4);margin:var(--sp-4) 0;">
+                <div style="font-family:var(--font-heading);font-size:1.2rem;color:var(--color-primary);margin-bottom:6px;">Cronograma ideal</div>
+                <div style="display:flex;flex-direction:column;gap:8px;">
+                  <div style="display:flex;align-items:center;gap:var(--sp-3);">
+                    <span style="background:var(--color-primary);color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;flex-shrink:0;">20h</span>
+                    <span style="font-size:0.9rem;">Prepare o molho antes de dormir</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:var(--sp-3);">
+                    <span style="background:var(--color-secondary);color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.8rem;flex-shrink:0;">8h</span>
+                    <span style="font-size:0.9rem;">De manhã: leve direto para a máquina</span>
+                  </div>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="step-item" data-step-id="perc-7">
+            <div class="step-header">
+              <div class="step-number">7</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Lavar na máquina: percarbonato na pré-lavagem</div>
+                <div class="step-subtitle">Dupla ação: molho + máquina</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Na máquina de lavar: coloque <strong>1 scoop de percarbonato no compartimento de pré-lavagem</strong> e o sabão para roupa branca no compartimento de sabão normal. Adicione o <em>lencinho branqueador óptico direto no tambor</em>.
+              </p>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div class="step-item" data-step-id="perc-8">
+            <div class="step-header">
+              <div class="step-number">8</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Selecione 40°C no modo algodão</div>
+                <div class="step-subtitle">Temperatura ideal para ativar na máquina</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Para peças de algodão: selecione <strong>40°C no modo algodão</strong>. Isso ativa o percarbonato dentro da máquina também. Para estampas plásticas (silk): máximo 40°C — o plástico pode encolher em temperaturas altas.
+              </p>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 9 -->
+          <div class="step-item" data-step-id="perc-9">
+            <div class="step-header">
+              <div class="step-number">9</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Resultado: sem manchas, sem esforço!</div>
+                <div class="step-subtitle">O que esperar depois da lavagem</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div style="background:linear-gradient(135deg,#14532D,#15803D);border-radius:var(--radius-lg);padding:var(--sp-6);color:white;margin-bottom:var(--sp-4);text-align:center;">
+                <div style="font-size:3rem;margin-bottom:var(--sp-3);">✨</div>
+                <div style="font-family:var(--font-heading);font-size:1.8rem;font-weight:700;">Resultado após a lavagem</div>
+                <div style="display:flex;justify-content:center;gap:var(--sp-4);margin-top:var(--sp-4);flex-wrap:wrap;">
+                  <span style="background:rgba(255,255,255,0.2);padding:6px 16px;border-radius:9999px;font-size:0.88rem;border:1.5px solid rgba(255,255,255,0.3);">Sem sombra azul</span>
+                  <span style="background:rgba(255,255,255,0.2);padding:6px 16px;border-radius:9999px;font-size:0.88rem;border:1.5px solid rgba(255,255,255,0.3);">Sem batom vermelho</span>
+                  <span style="background:rgba(255,255,255,0.2);padding:6px 16px;border-radius:9999px;font-size:0.88rem;border:1.5px solid rgba(255,255,255,0.3);">Sem esforço</span>
+                </div>
+              </div>
+              <p class="step-desc">
+                Depois da lavagem completa: sua peça sai <strong>sem as manchas que entraram</strong>. Sombra azul, batom vermelho, manchas de maquiagem — tudo vai embora. E sem precisar esfregar, sem cloro, sem produto caro.
+              </p>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="completion-banner" id="completionBanner">
+          <span class="completion-emoji">🧪</span>
+          <h2>Percarbonato dominado!</h2>
+          <p>Agora você sabe usar o ingrediente mais versátil da lavanderia. Manchas não têm mais chance.</p>
+          <div class="completion-actions">
+            <a href="index.html" class="btn btn-white btn-lg">Ver todos os guias</a>
+            <a href="toalha.html" class="btn btn-white-outline btn-lg">Guia das toalhas →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><a href="index.html">← Voltar para todos os guias</a> · Feito com carinho</p>
+    </div>
+  </footer>
+
+  <script>
+    function markStepDone(btn) {
+      const step = btn.closest('.step-item');
+      const isDone = step.classList.contains('completed');
+      if (typeof markDone === 'function') markDone(step, !isDone);
+    }
+  </script>
+  <script src="js/guide.js"></script>
+</body>
+</html>

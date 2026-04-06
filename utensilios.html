@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utensílios Essenciais — Lavar Roupa</title>
+  <meta name="description" content="7 utensílios e acessórios que vão transformar o cuidado das suas roupas no dia a dia.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/guide.css">
+  <style>
+    .guide-hero { background: linear-gradient(135deg, #78350F 0%, #D97706 60%, #F59E0B 100%); }
+    .hero-blob { background: rgba(255,255,255,0.2); }
+    .guide-nav { display:flex; gap:var(--sp-2); overflow-x:auto; padding:var(--sp-4) 0; scrollbar-width:none; }
+    .guide-nav::-webkit-scrollbar { display:none; }
+    .guide-nav-link { display:inline-flex; align-items:center; gap:6px; padding:var(--sp-2) var(--sp-4); background:var(--color-surface); border:2px solid var(--color-border-dark); border-radius:var(--radius-full); font-size:0.82rem; font-weight:600; color:var(--color-fg-muted); white-space:nowrap; transition:all var(--transition-fast); box-shadow:2px 2px 0px var(--color-border-dark); }
+    .guide-nav-link:hover { background:var(--color-muted); color:var(--color-fg); }
+    .guide-nav-link.active { background:var(--color-primary); color:white; border-color:var(--color-primary-dark); }
+
+    /* For tools, each step = one tool. Make it look like a product card */
+    .tool-highlight {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-4);
+      background: linear-gradient(135deg, #FFFBEB, #FEF3C7);
+      border: 2px solid #FCD34D;
+      border-radius: var(--radius-lg);
+      padding: var(--sp-5);
+      margin-bottom: var(--sp-4);
+    }
+
+    .tool-icon-big {
+      width: 64px; height: 64px;
+      background: var(--color-accent);
+      border: 3px solid #B45309;
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 4px 4px 0px #B45309;
+    }
+    .tool-icon-big svg { width: 32px; height: 32px; color: white; }
+
+    .tool-info { flex: 1; min-width: 0; }
+    .tool-name  { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: #78350F; }
+    .tool-sub   { font-size: 0.85rem; color: #92400E; font-weight: 500; margin-top: 4px; }
+
+    .where-to-buy {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: var(--sp-3) var(--sp-4);
+      background: white;
+      border: 2px solid var(--color-border-dark);
+      border-radius: var(--radius-md);
+      margin-top: var(--sp-4);
+    }
+    .where-to-buy svg { width: 18px; height: 18px; color: var(--color-primary); flex-shrink: 0; }
+    .where-to-buy p  { font-size: 0.88rem; color: var(--color-fg-muted); line-height: 1.5; }
+    .where-to-buy strong { color: var(--color-primary); }
+  </style>
+</head>
+<body>
+
+  <div class="guide-hero">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="container">
+      <a href="index.html" class="hero-back-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Voltar para guias
+      </a>
+      <div class="guide-hero-inner">
+        <div class="guide-hero-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div class="guide-hero-text">
+          <h1>Utensílios Essenciais</h1>
+          <p>7 acessórios que transformam o cuidado das suas roupas. Compra-se uma vez, usa para sempre.</p>
+          <div class="guide-tags">
+            <span class="guide-tag">7 itens</span>
+            <span class="guide-tag">Maioria no AliExpress</span>
+            <span class="guide-tag">Longevidade das roupas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress-sticky">
+    <div class="container">
+      <div class="progress-inner">
+        <div class="progress-track-wrap">
+          <div class="progress-fill" id="progressFill" style="background: linear-gradient(90deg, #78350F, #F59E0B);"></div>
+        </div>
+        <div class="progress-text-wrap">
+          <span class="progress-pct" id="progressPct">0%</span>
+          <span class="progress-steps-txt" id="progressSteps">0 de 7</span>
+        </div>
+        <button class="reset-btn" id="resetBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-5.1"/></svg>
+          Reiniciar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <nav class="guide-nav">
+      <a href="brancas.html"      class="guide-nav-link">Brancas</a>
+      <a href="pretas.html"       class="guide-nav-link">Pretas</a>
+      <a href="coloridas.html"    class="guide-nav-link">Coloridas</a>
+      <a href="percarbonato.html" class="guide-nav-link">Percarbonato</a>
+      <a href="toalha.html"       class="guide-nav-link">Toalhas</a>
+      <a href="utensilios.html"   class="guide-nav-link active">Utensílios</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="steps-section">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-heading-icon" style="background:#FEF3C7;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h2>Os 7 Essenciais</h2>
+        </div>
+
+        <div class="steps-list">
+
+          <!-- 1: Papa-bolinhas -->
+          <div class="step-item" data-step-id="util-1">
+            <div class="step-header">
+              <div class="step-number" style="background:#D97706;border-color:#78350F;box-shadow:3px 3px 0 #78350F;">1</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Papa-bolinhas de qualidade</div>
+                <div class="step-subtitle">Indispensável para tecidos de algodão</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="tool-highlight">
+                <div class="tool-icon-big">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                </div>
+                <div class="tool-info">
+                  <div class="tool-name">Papa-bolinhas</div>
+                  <div class="tool-sub">Removedor de bolinhas de tecido</div>
+                </div>
+              </div>
+              <p class="step-desc">
+                Todo tecido de algodão vai acumular <strong>bolinhas</strong> com o tempo de lavagem — são fibras danificadas que se enrolam. O papa-bolinhas de qualidade (funciona à pilha) passa sobre o tecido e remove essas bolinhas em segundos. A roupa volta a ficar lisa, brilhosa, como nova. 15 minutos para fazer todas as suas roupas.
+              </p>
+              <div class="where-to-buy">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                <p>Compre no <strong>AliExpress</strong> — versões robustas e a pilha por um bom preço. Pesquise "fabric shaver" ou "removedor de bolinhas".</p>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Anotei!
+              </button>
+            </div>
+          </div>
+
+          <!-- 2: Tirador de pelos de gato -->
+          <div class="step-item" data-step-id="util-2">
+            <div class="step-header">
+              <div class="step-number" style="background:#D97706;border-color:#78350F;box-shadow:3px 3px 0 #78350F;">2</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Tirador de pelos reutilizável</div>
+                <div class="step-subtitle">Para quem tem pets — sustentável e não danifica</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="tool-highlight">
+                <div class="tool-icon-big">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </div>
+                <div class="tool-info">
+                  <div class="tool-name">Tirador de pelos reutilizável</div>
+                  <div class="tool-sub">Tecido que gruda pelos sem cola</div>
+                </div>
+              </div>
+              <p class="step-desc">
+                Diferente do rolinho de cola (que precisa de refil), o tirador de pelos reutilizável é feito de um tecido especial que gruda os pelos sem cola. <strong>Não danifica o tecido</strong>, é sustentável e se limpa com água. Use antes de lavar para retirar o excesso — jogar pelo de gato na máquina entope o filtro.
+              </p>
+              <div class="where-to-buy">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                <p>Encontrado no <strong>AliExpress</strong> — pesquise "reusable pet hair remover". Muito barato e dura anos.</p>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Anotei!
+              </button>
+            </div>
+          </div>
+
+          <!-- 3: Furador de couro -->
+          <div class="step-item" data-step-id="util-3">
+            <div class="step-header">
+              <div class="step-number" style="background:#D97706;border-color:#78350F;box-shadow:3px 3px 0 #78350F;">3</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Furador de couro</div>
+                <div class="step-subtitle">Para cintos, bolsas e qualquer peça de couro</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Você pode usar agulha, prego quente ou qualquer improvisação — mas existe um <strong>furador específico para couro</strong> que faz a coisa certa, do jeito certo, sem danificar. Você só pressiona e gira para criar um furo perfeito. Serve para cintos, bolsas, cadernos de couro (como o caderno da Lou Carmen), pulseiras.
+              </p>
+              <div class="where-to-buy">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                <p>Compre no <strong>AliExpress</strong> o kit com múltiplas espessuras. Muito barato — compra uma vez e tem para sempre.</p>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Anotei!
+              </button>
+            </div>
+          </div>
+
+          <!-- 4: Lencinhos preto -->
+          <div class="step-item" data-step-id="util-4">
+            <div class="step-header">
+              <div class="step-number" style="background:#D97706;border-color:#78350F;box-shadow:3px 3px 0 #78350F;">4</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Lencinhos tingidores (preto e branco)</div>
+                <div class="step-subtitle">Lava e retinge ao mesmo tempo</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="tool-highlight">
+                <div class="tool-icon-big" style="background:#1E293B;border-color:#0F172A;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>
+                </div>
+                <div class="tool-info">
+                  <div class="tool-name">Lencinhos tingidores</div>
+                  <div class="tool-sub">Para roupa preta e para roupa branca</div>
+                </div>
+              </div>
+              <p class="step-desc">
+                Os lencinhos tingidores vão direto no tambor durante a lavagem. Para roupa preta: devolvem a cor preta e realçam o tom. Para roupa branca: o lencinho de branqueador óptico cria o efeito visualmente branco. Vale muito a pena ter os dois em casa.
+              </p>
+              <div class="callout callout--warning">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Lencinho preto: só com roupas pretas</div>
+                  <p>Nunca use o lencinho preto com roupas coloridas ou brancas — vai manchar de azul/preto. Só lavar junto com roupas do mesmo tom escuro.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Anotei!
+              </button>
+            </div>
+          </div>
+
+          <!-- 5: Caneta antimancha -->
+          <div class="step-item" data-step-id="util-5">
+            <div class="step-header">
+              <div class="step-number" style="background:#D97706;border-color:#78350F;box-shadow:3px 3px 0 #78350F;">5</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Caneta antimancha (sempre na bolsa)</div>
+                <div class="step-subtitle">O superpoder que você carrega no dia a dia</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="visual-card" style="background:linear-gradient(135deg,#7C3AED,#A855F7);">
+                <div style="text-align:center;color:white;padding:20px;">
+                  <div style="font-size:3rem;margin-bottom:8px;">✏️</div>
+                  <div style="font-family:var(--font-heading);font-size:1.4rem;font-weight:700;">História real</div>
+                  <div style="font-size:0.88rem;opacity:0.85;margin-top:8px;line-height:1.5;max-width:280px;margin-left:auto;margin-right:auto;">"Estava com amigos, calda de morango caiu na blusa branca. Passei a caneta na frente de todos — a mancha sumiu. A conversa parou."</div>
+                </div>
+              </div>
+              <p class="step-desc">
+                A <strong>caneta antimancha</strong> tem água oxigenada em formato portátil. Pressione a ponta e esfregue na mancha — funciona em qualquer lugar, na hora. O segredo para não ter mancha permanente é tratar <em>no momento em que acontece</em>. Tenha uma em cada bolsa que você usa.
+              </p>
+              <div class="callout callout--product">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Onde comprar no Brasil</div>
+                  <div class="product-list">
+                    <span class="product-tag">De Girl (Drogaria Venâncio)</span>
+                    <span class="product-tag">Tide To Go (Mercado Livre)</span>
+                  </div>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Anotei!
+              </button>
+            </div>
+          </div>
+
+          <!-- 6: Tesoura de costura -->
+          <div class="step-item" data-step-id="util-6">
+            <div class="step-header">
+              <div class="step-number" style="background:#D97706;border-color:#78350F;box-shadow:3px 3px 0 #78350F;">6</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Tesoura pequena de costura</div>
+                <div class="step-subtitle">Para cortar fios e etiquetas sem risco</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                A tesoura de costura pequena (de ponta curva ou reta) dá muito mais controle do que uma tesoura comum para <strong>cortar etiquetas</strong> que coçam, <strong>aparar fios soltos</strong> e fazer ajustes delicados. Com a tesoura grande você arrisca cortar o tecido junto — a pequena dá precisão.
+              </p>
+              <div class="where-to-buy">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                <p>Encontrada em qualquer <strong>casa de costura</strong> ou mercado de artesanato. Custa pouquíssimo.</p>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Anotei!
+              </button>
+            </div>
+          </div>
+
+          <!-- 7: Passador de fio -->
+          <div class="step-item" data-step-id="util-7">
+            <div class="step-header">
+              <div class="step-number" style="background:#D97706;border-color:#78350F;box-shadow:3px 3px 0 #78350F;">7</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Passador de fio (elástico/cadarço)</div>
+                <div class="step-subtitle">Fim das gambiarras com grampos e agulhas</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Aquele cadarço ou elástico que saiu do canalzinho da roupa? Pare de usar agulha, grampo ou outras gambiarras. O <strong>passador de fio</strong> é uma mola com uma pontinha onde você prende o fio — e vai passando pelo canalzinho em segundos. Faz em 1 minuto o que levaria 5 de sofrimento.
+              </p>
+              <div class="callout callout--tip">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Todo mundo vai te amar</div>
+                  <p>Quando alguém chegar com um elástico de moletom ou cadarço de shorts pra passar, você resolve em 1 minuto. Eles vão amar você para sempre.</p>
+                </div>
+              </div>
+              <div class="where-to-buy">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                <p>Qualquer <strong>casa de costura</strong> ou <strong>Mercado Livre</strong>. Às vezes vem no kit de costura básico.</p>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Anotei!
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Shopping list summary -->
+        <div style="background:var(--color-surface);border:var(--border-clay);border-radius:var(--radius-lg);box-shadow:var(--shadow-clay-card);padding:var(--sp-6);margin:var(--sp-8) 0;">
+          <h3 style="font-family:var(--font-heading);font-size:1.8rem;color:var(--color-primary);margin-bottom:var(--sp-4);">Lista de compras completa</h3>
+          <div style="display:flex;flex-direction:column;gap:var(--sp-3);">
+            <div style="display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3);background:var(--color-muted);border-radius:var(--radius-md);">
+              <span style="font-size:1.2rem;">🔋</span>
+              <span style="font-weight:600;">Papa-bolinhas a pilha</span>
+              <span style="margin-left:auto;font-size:0.82rem;color:var(--color-fg-muted);">AliExpress</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3);background:var(--color-muted);border-radius:var(--radius-md);">
+              <span style="font-size:1.2rem;">🐾</span>
+              <span style="font-weight:600;">Tirador de pelos reutilizável</span>
+              <span style="margin-left:auto;font-size:0.82rem;color:var(--color-fg-muted);">AliExpress</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3);background:var(--color-muted);border-radius:var(--radius-md);">
+              <span style="font-size:1.2rem;">🔧</span>
+              <span style="font-weight:600;">Kit furador de couro</span>
+              <span style="margin-left:auto;font-size:0.82rem;color:var(--color-fg-muted);">AliExpress</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3);background:var(--color-muted);border-radius:var(--radius-md);">
+              <span style="font-size:1.2rem;">🧺</span>
+              <span style="font-weight:600;">Lencinhos tingidores (preto + branco)</span>
+              <span style="margin-left:auto;font-size:0.82rem;color:var(--color-fg-muted);">Mercado Livre</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3);background:var(--color-muted);border-radius:var(--radius-md);">
+              <span style="font-size:1.2rem;">✏️</span>
+              <span style="font-weight:600;">Caneta antimancha (De Girl / Tide To Go)</span>
+              <span style="margin-left:auto;font-size:0.82rem;color:var(--color-fg-muted);">Drogaria / Mercado Livre</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3);background:var(--color-muted);border-radius:var(--radius-md);">
+              <span style="font-size:1.2rem;">✂️</span>
+              <span style="font-weight:600;">Tesoura pequena de costura</span>
+              <span style="margin-left:auto;font-size:0.82rem;color:var(--color-fg-muted);">Casa de costura</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3);background:var(--color-muted);border-radius:var(--radius-md);">
+              <span style="font-size:1.2rem;">🔗</span>
+              <span style="font-weight:600;">Passador de fio/elástico</span>
+              <span style="margin-left:auto;font-size:0.82rem;color:var(--color-fg-muted);">Casa de costura</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="completion-banner" id="completionBanner">
+          <span class="completion-emoji">🎉</span>
+          <h2>Kit completo!</h2>
+          <p>Agora você sabe tudo que precisa para cuidar das suas roupas como uma profissional. Suas peças vão durar muito mais.</p>
+          <div class="completion-actions">
+            <a href="index.html" class="btn btn-white btn-lg">Ver todos os guias</a>
+            <a href="brancas.html" class="btn btn-white-outline btn-lg">Começar pelas brancas →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><a href="index.html">← Voltar para todos os guias</a> · Feito com carinho para suas roupas durarem mais</p>
+    </div>
+  </footer>
+
+  <script>
+    function markStepDone(btn) {
+      const step = btn.closest('.step-item');
+      const isDone = step.classList.contains('completed');
+      if (typeof markDone === 'function') markDone(step, !isDone);
+    }
+  </script>
+  <script src="js/guide.js"></script>
+</body>
+</html>

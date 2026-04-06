@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toalhas de Banho — Lavar Roupa</title>
+  <meta name="description" content="Como lavar toalhas de banho para ficarem sempre fofinhas, absorventes e cheirosas.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/guide.css">
+  <style>
+    .guide-hero { background: linear-gradient(135deg, #0C4A6E 0%, #0369A1 50%, #0EA5E9 100%); }
+    .hero-blob { background: rgba(255,255,255,0.2); }
+    .guide-nav { display:flex; gap:var(--sp-2); overflow-x:auto; padding:var(--sp-4) 0; scrollbar-width:none; }
+    .guide-nav::-webkit-scrollbar { display:none; }
+    .guide-nav-link { display:inline-flex; align-items:center; gap:6px; padding:var(--sp-2) var(--sp-4); background:var(--color-surface); border:2px solid var(--color-border-dark); border-radius:var(--radius-full); font-size:0.82rem; font-weight:600; color:var(--color-fg-muted); white-space:nowrap; transition:all var(--transition-fast); box-shadow:2px 2px 0px var(--color-border-dark); }
+    .guide-nav-link:hover { background:var(--color-muted); color:var(--color-fg); }
+    .guide-nav-link.active { background:var(--color-primary); color:white; border-color:var(--color-primary-dark); }
+
+    .color-sort {
+      display: flex;
+      gap: var(--sp-3);
+      flex-wrap: wrap;
+      margin: var(--sp-4) 0;
+    }
+    .color-sort-item {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: var(--sp-3) var(--sp-4);
+      border-radius: var(--radius-md);
+      border: 2px solid var(--color-border);
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+    .color-swatch-sm {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      border: 2px solid rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="guide-hero">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="container">
+      <a href="index.html" class="hero-back-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Voltar para guias
+      </a>
+      <div class="guide-hero-inner">
+        <div class="guide-hero-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+        </div>
+        <div class="guide-hero-text">
+          <h1>Toalhas de Banho</h1>
+          <p>Toalhas sempre fofinhas, absorventes e cheirosas. O segredo está no vinagre — e você vai se surpreender.</p>
+          <div class="guide-tags">
+            <span class="guide-tag">7 passos</span>
+            <span class="guide-tag">Vinagre no lugar do amaciante</span>
+            <span class="guide-tag">Desinfetante elimina odor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress-sticky">
+    <div class="container">
+      <div class="progress-inner">
+        <div class="progress-track-wrap">
+          <div class="progress-fill" id="progressFill" style="background: linear-gradient(90deg, #0C4A6E, #0EA5E9);"></div>
+        </div>
+        <div class="progress-text-wrap">
+          <span class="progress-pct" id="progressPct">0%</span>
+          <span class="progress-steps-txt" id="progressSteps">0 de 7</span>
+        </div>
+        <button class="reset-btn" id="resetBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-5.1"/></svg>
+          Reiniciar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <nav class="guide-nav">
+      <a href="brancas.html"      class="guide-nav-link">Brancas</a>
+      <a href="pretas.html"       class="guide-nav-link">Pretas</a>
+      <a href="coloridas.html"    class="guide-nav-link">Coloridas</a>
+      <a href="percarbonato.html" class="guide-nav-link">Percarbonato</a>
+      <a href="toalha.html"       class="guide-nav-link active">Toalhas</a>
+      <a href="utensilios.html"   class="guide-nav-link">Utensílios</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="steps-section">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-heading-icon" style="background:#E0F2FE;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0369A1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+          </div>
+          <h2>Passo a Passo</h2>
+        </div>
+
+        <div class="steps-list">
+
+          <!-- 1 -->
+          <div class="step-item" data-step-id="toalha-1">
+            <div class="step-header">
+              <div class="step-number" style="background:#0369A1;border-color:#0C4A6E;box-shadow:3px 3px 0 #0C4A6E;">1</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Separe as toalhas por cor</div>
+                <div class="step-subtitle">Branca com branca, colorida com colorida, preta com preta</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="color-sort">
+                <div class="color-sort-item" style="background:#F8FAFC;">
+                  <div class="color-swatch-sm" style="background:#E2E8F0;"></div>
+                  Brancas juntas
+                </div>
+                <div class="color-sort-item" style="background:#FEF9C3;">
+                  <div class="color-swatch-sm" style="background:linear-gradient(135deg,#EF4444,#3B82F6,#22C55E);"></div>
+                  Coloridas juntas
+                </div>
+                <div class="color-sort-item" style="background:#F1F5F9;">
+                  <div class="color-swatch-sm" style="background:#1E293B;"></div>
+                  Pretas juntas
+                </div>
+              </div>
+              <p class="step-desc">
+                Nunca misture cores de toalhas na mesma lavagem. A separação por cor é fundamental para <strong>não danificar as toalhas</strong> — uma toalha colorida pode sangrar e manchar uma branca permanentemente.
+              </p>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="step-item" data-step-id="toalha-2">
+            <div class="step-header">
+              <div class="step-number" style="background:#0369A1;border-color:#0C4A6E;box-shadow:3px 3px 0 #0C4A6E;">2</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Distribua bem na máquina</div>
+                <div class="step-subtitle">Equilíbrio garante lavagem uniforme</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Coloque as toalhas <strong>bem distribuídas</strong> dentro do tambor. Não jogue tudo de qualquer jeito — distribua ao redor do tambor para que a máquina gire de forma equilibrada e lave uniformemente.
+              </p>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="step-item" data-step-id="toalha-3">
+            <div class="step-header">
+              <div class="step-number" style="background:#0369A1;border-color:#0C4A6E;box-shadow:3px 3px 0 #0C4A6E;">3</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Vinagre no lugar do amaciante</div>
+                <div class="step-subtitle">O maior segredo para toalhas fofinhas</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="visual-card" style="background:linear-gradient(135deg,#78350F,#D97706);">
+                <div style="text-align:center; color:white; padding:20px;">
+                  <div style="font-size:3rem; margin-bottom:8px;">🍶</div>
+                  <div style="font-family:var(--font-heading); font-size:1.4rem; font-weight:700;">Vinagre de Álcool</div>
+                  <div style="font-size:0.85rem; opacity:0.8; margin-top:4px;">1 copo americano para meia máquina</div>
+                </div>
+              </div>
+              <p class="step-desc">
+                O <strong>maior segredo para toalhas fofinhas</strong>: use <em>vinagre de álcool no lugar do amaciante</em>. Coloque um copo americano (uns 200ml) no compartimento do amaciante. O vinagre amacia as fibras sem deixar resíduo e não causa aquele cheiro de mofo que o amaciante causa.
+              </p>
+              <div class="callout callout--warning">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Use com moderação</div>
+                  <p>O vinagre é ácido acético. Não use em quantidades excessivas e não use com muita frequência — pode desgastar borrachas e peças internas da máquina a longo prazo.</p>
+                </div>
+              </div>
+              <div class="callout callout--warning">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Nunca use amaciante em toalhas</div>
+                  <p>O amaciante cria uma película nas fibras que impermeabiliza a toalha — ela para de absorver água e fica com cheiro ruim. Abandone o amaciante em toalhas de uma vez por todas.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="step-item" data-step-id="toalha-4">
+            <div class="step-header">
+              <div class="step-number" style="background:#0369A1;border-color:#0C4A6E;box-shadow:3px 3px 0 #0C4A6E;">4</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Sabão neutro líquido (quantidade certa!)</div>
+                <div class="step-subtitle">Menos é mais — siga o rótulo</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Use <strong>sabão líquido neutro</strong> (em pó também funciona). A quantidade é a que está escrita no <em>rótulo</em> — não coloque mais pensando que vai lavar melhor. Excesso de sabão deixa resíduo nas fibras e pode deixar a toalha pegajosa ou com cheiro.
+              </p>
+              <div class="callout callout--tip">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Por que "neutro"?</div>
+                  <p>Sabão neutro não tem branqueador óptico nem corantes que podem interferir na textura das fibras. Para toalhas de outras cores, prefira sabão específico para aquela cor.</p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="step-item" data-step-id="toalha-5">
+            <div class="step-header">
+              <div class="step-number" style="background:#0369A1;border-color:#0C4A6E;box-shadow:3px 3px 0 #0C4A6E;">5</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Adicione desinfetante (Pinho Sol ou Lisoforme)</div>
+                <div class="step-subtitle">O segredo do cheiro bom nas toalhas</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <div class="visual-card" style="background:linear-gradient(135deg,#0C4A6E,#0284C7);">
+                <div style="text-align:center; color:white; padding:20px;">
+                  <div style="font-size:3rem; margin-bottom:8px;">🦠</div>
+                  <div style="font-family:var(--font-heading); font-size:1.4rem; font-weight:700;">Bactérias = cheiro ruim</div>
+                  <div style="font-size:0.85rem; opacity:0.8; margin-top:4px;">Desinfetante elimina na raiz</div>
+                </div>
+              </div>
+              <p class="step-desc">
+                Coloque <strong>uma tampinha de Pinho Sol ou Lisoforme</strong> na lavagem. O desinfetante mata as bactérias que ficam nas fibras úmidas — e são exatamente essas bactérias que causam aquele cheiro ruim de toalha molhada. Elimine as bactérias, elimine o cheiro.
+              </p>
+              <div class="callout callout--product">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Produtos recomendados</div>
+                  <div class="product-list">
+                    <span class="product-tag">Pinho Sol</span>
+                    <span class="product-tag">Lisoforme</span>
+                  </div>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="step-item" data-step-id="toalha-6">
+            <div class="step-header">
+              <div class="step-number" style="background:#0369A1;border-color:#0C4A6E;box-shadow:3px 3px 0 #0C4A6E;">6</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Modo dia a dia + molho prolongado</div>
+                <div class="step-subtitle">Deixe os produtos agirem por mais tempo</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Selecione o <strong>modo dia a dia</strong> (ou similar) na sua máquina e ative o <em>molho prolongado</em>, se disponível. Isso deixa as toalhas em contato com os produtos por mais tempo, garantindo uma limpeza mais profunda e melhor ação do desinfetante.
+              </p>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="step-item" data-step-id="toalha-7">
+            <div class="step-header">
+              <div class="step-number" style="background:#0369A1;border-color:#0C4A6E;box-shadow:3px 3px 0 #0C4A6E;">7</div>
+              <div class="step-completed-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="step-text">
+                <div class="step-title">Secar na sombra — nunca no sol direto</div>
+                <div class="step-subtitle">Sol direto resseca as fibras e deixa a toalha dura</div>
+              </div>
+              <svg class="step-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="step-body">
+              <p class="step-desc">
+                Pendure as toalhas <strong>na sombra</strong> para secar. O sol direto resseca as fibras de algodão, deixando a toalha dura e áspera — o oposto do que você quer. Na sombra e com boa ventilação, a toalha seca <em>fofinha e macia</em>.
+              </p>
+              <div class="callout callout--tip">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div class="callout-body">
+                  <div class="callout-title">Resumo da fórmula mágica</div>
+                  <p>
+                    ✓ Separe por cor<br>
+                    ✓ Sabão neutro na dose certa<br>
+                    ✓ Vinagre no lugar do amaciante<br>
+                    ✓ Desinfetante (Pinho Sol/Lisoforme)<br>
+                    ✓ Modo dia a dia + molho<br>
+                    ✓ Secar na sombra
+                  </p>
+                </div>
+              </div>
+              <button class="done-btn" onclick="markStepDone(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
+                Marcar como feito
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="completion-banner" id="completionBanner">
+          <span class="completion-emoji">🛁</span>
+          <h2>Toalhas perfeitas!</h2>
+          <p>Suas toalhas vão sair fofinhas, cheirosas e absorventes. Uma experiência de banho completamente diferente.</p>
+          <div class="completion-actions">
+            <a href="index.html" class="btn btn-white btn-lg">Ver todos os guias</a>
+            <a href="utensilios.html" class="btn btn-white-outline btn-lg">Guia de utensílios →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><a href="index.html">← Voltar para todos os guias</a> · Feito com carinho</p>
+    </div>
+  </footer>
+
+  <script>
+    function markStepDone(btn) {
+      const step = btn.closest('.step-item');
+      const isDone = step.classList.contains('completed');
+      if (typeof markDone === 'function') markDone(step, !isDone);
+    }
+  </script>
+  <script src="js/guide.js"></script>
+</body>
+</html>
