@@ -150,6 +150,7 @@
   pointer-events: none;
   z-index: 1;
   backdrop-filter: blur(3px);
+  will-change: transform, opacity;
 }
 
 .hero-blob-1 { width: 280px; height: 280px; top: -90px;  right: -70px;  animation-delay: 0s; }
@@ -194,6 +195,7 @@
   display: block;
   animation: gentleFloat 4s ease-in-out infinite;
   filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+  will-change: transform;
 }
 
 .guide-hero-title,
@@ -247,6 +249,15 @@
   transform: scale(1.03);
 }
 
+@media (hover: none) {
+  .guide-meta-pill:hover,
+  .guide-tag:hover,
+  .hero-back-btn:hover {
+    transform: none;
+    background: inherit;
+    box-shadow: none;
+  }
+}
 
 /* ═══════════════════════════
    📊 PROGRESS STICKY BAR
@@ -710,6 +721,11 @@
   z-index: 0;
   box-shadow: 0 4px 16px rgba(255,45,159,0.06), inset 2px 2px 0 rgba(255,255,255,1);
   border: 1.5px solid rgba(255,45,159,0.06);
+  will-change: transform;
+}
+
+.step-item:not(.active-card):not(.active-card-prev) .cloud-puff {
+  animation-play-state: paused !important;
 }
 
 /* Base animation mixins applied to the puffs */

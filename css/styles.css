@@ -297,9 +297,11 @@ p  { font-size: 1rem; font-weight: 500; }
   position: absolute;
   inset: 0;
   background: rgba(255,255,255,0.2);
+  cursor: pointer;
   opacity: 0;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s var(--ease-out);
   border-radius: inherit;
+  will-change: opacity;
 }
 .btn:active::before { opacity: 1; }
 
@@ -308,6 +310,7 @@ p  { font-size: 1rem; font-weight: 500; }
   color: #fff;
   border-color: transparent;
   box-shadow: 0 4px 20px rgba(255,45,159,0.35), 0 0 0 0 rgba(255,45,159,0.3);
+  will-change: transform, box-shadow;
 }
 
 .btn-primary:hover {
@@ -362,9 +365,10 @@ p  { font-size: 1rem; font-weight: 500; }
   position: relative;
   overflow: hidden;
   transition: transform 0.3s var(--ease-spring);
+  will-change: transform;
 }
 
-.callout:hover { transform: scale(1.01); }
+.callout:hover { transform: translateY(-2px); }
 
 .callout::before {
   content: '';
@@ -516,7 +520,8 @@ p  { font-size: 1rem; font-weight: 500; }
   justify-content: center;
   font-family: var(--font-heading);
   font-size: 1.1rem;
-  transition: all var(--transition-normal);
+  transition: transform var(--transition-normal);
+  will-change: transform;
 }
 
 .step-completed-icon {
@@ -566,6 +571,7 @@ p  { font-size: 1rem; font-weight: 500; }
   height: 24px;
   color: var(--color-fg-light);
   transition: transform 300ms var(--ease-spring);
+  will-change: transform;
   margin-top: 8px;
 }
 

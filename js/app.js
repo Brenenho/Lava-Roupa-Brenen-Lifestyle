@@ -123,6 +123,19 @@ const CALC_DATA = {
       { emoji: '⚠️', name: 'Amaciante', amount: 'NUNCA', note: 'gruda nas fibras do enchimento', mult: 1 },
     ],
   },
+  utensilios: {
+    label: 'Utensílios',
+    emoji: '🛠️',
+    temp: 'Dicas de ferramentas',
+    tempClass: 'temp-warm',
+    tip: 'Esta categoria não é um ciclo de lavagem. Veja o guia completo para saber como usar cada acessório no dia a dia.',
+    half: [
+      { emoji: '🛠️', name: 'Veja o Guia', amount: 'INFO', note: 'Clique no card acima para ler o guia completo de utensílios.', mult: 1 },
+    ],
+    full: [
+      { emoji: '🛠️', name: 'Veja o Guia', amount: 'INFO', note: 'Clique no card acima para ler o guia completo de utensílios.', mult: 1 },
+    ],
+  },
 };
 
 // ── Full Calculator ───────────────────────────────────────────
@@ -140,6 +153,7 @@ const QTY_THRESHOLDS = {
   toalhas:   { halfMax: 7,  label: 'toalhas' },
   cama:      { halfMax: 4,  label: 'peças' },
   edredom:   { halfMax: 1,  label: 'edredoms' },
+  utensilios:{ halfMax: 1,  label: 'itens' },
 };
 
 function qtyToLoad(category, qty) {

@@ -13,7 +13,7 @@
 
     /* ── Magical floating particles ── */
     #heroBubbles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
-    .hero-bubble { position: absolute; bottom: -60px; animation: bubbleFloat linear infinite; opacity: 0; }
+    .hero-bubble { position: absolute; bottom: -60px; animation: bubbleFloat linear infinite; opacity: 0; will-change: transform, opacity; }
 
     /* ── Hero ── */
     .hero {
@@ -160,7 +160,7 @@
     }
     .guide-card.visible { opacity: 1; transform: translateY(0); }
     .guide-card:hover {
-      transform: translateY(-8px) rotate(-1deg) scale(1.02);
+      transform: translateY(-8px) scale(1.02);
       box-shadow: var(--shadow-hover);
       border-color: var(--card-accent, rgba(255,45,159,0.3));
     }
@@ -224,6 +224,7 @@
     .card-cama     { --card-accent: #7C3AFF; }
     .card-edredom  { --card-accent: #FF6B35; }
     .card-perc     { --card-accent: #00C9A7; }
+    .card-utensilios { --card-accent: #D97706; }
 
     /* ── Calculator — feminine modern tech ── */
     @keyframes floatParticle {
@@ -808,6 +809,7 @@
         <span class="hero-pill">🛁 Toalhas</span>
         <span class="hero-pill">🛏️ Cama</span>
         <span class="hero-pill">🌸 Edredom</span>
+        <span class="hero-pill">🛠️ Utensílios</span>
       </div>
     </div>
   </section>
@@ -957,6 +959,24 @@
           </div>
         </a>
 
+        <!-- Utensílios -->
+        <a href="utensilios.html" class="guide-card card-utensilios" aria-label="Guia de utensílios essenciais">
+          <div class="card-color-bar"></div>
+          <div class="card-body">
+            <div class="card-top">
+              <span class="card-emoji">🛠️</span>
+              <span class="card-steps-badge">9 passos</span>
+            </div>
+            <h3 class="card-title">Utensílios Essenciais</h3>
+            <p class="card-desc">9 utensílios e acessórios que vão transformar o cuidado das suas roupas no dia a dia. Do saco de mesh ao steamer ideal.</p>
+            <span class="card-key-product">🧰 Kit de sobrevivência</span>
+          </div>
+          <div class="card-footer">
+            Ver guia completo
+            <span class="card-footer-arrow">→</span>
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
@@ -984,6 +1004,7 @@
             <button class="calc-chip" data-category="toalhas" role="tab" aria-selected="false">🛁 Toalhas</button>
             <button class="calc-chip" data-category="cama" role="tab" aria-selected="false">🛏️ Cama</button>
             <button class="calc-chip" data-category="edredom" role="tab" aria-selected="false">🌸 Edredom</button>
+            <button class="calc-chip" data-category="utensilios" role="tab" aria-selected="false">🛠️ Utensílios</button>
           </div>
         </div>
 
