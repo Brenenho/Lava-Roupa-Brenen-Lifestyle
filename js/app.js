@@ -129,32 +129,60 @@ const CALC_DATA = {
 
 let calcCategory = 'brancas';
 let calcLoad = 'half';
-let clothingAmount = 1;
+let calcMethod = 'load';   // 'load' | 'qty'
+let calcQty = 5;           // number of items
+
+// Thresholds: how many items = half vs full machine per category
+const QTY_THRESHOLDS = {
+  brancas:   { halfMax: 8,  label: 'peças' },
+  pretas:    { halfMax: 8,  label: 'peças' },
+  coloridas: { halfMax: 8,  label: 'peças' },
+  toalhas:   { halfMax: 7,  label: 'toalhas' },
+  cama:      { halfMax: 4,  label: 'peças' },
+  edredom:   { halfMax: 1,  label: 'edredoms' },
+};
+
+function qtyToLoad(category, qty) {
+  const t = QTY_THRESHOLDS[category] || { halfMax: 8 };
+  return qty <= t.halfMax ? 'half' : 'full';
+}
+
+function getEquivalenceText(category, qty) {
+  const effective = qtyToLoad(category, qty);
+  return effective === 'half' ? '≈ ½ máquina' : '≈ máquina cheia';
+}
+
+function updateQtyDisplay() {
+  const displayEl = document.getElementById('qtyDisplay');
+  const eqEl      = document.getElementById('qtyEquivalence');
+  const t = QTY_THRESHOLDS[calcCategory] || { label: 'peças' };
+  if (displayEl) displayEl.textContent = `${calcQty} ${t.label}`;
+  if (eqEl)      eqEl.textContent = getEquivalenceText(calcCategory, calcQty);
+}
 
 function renderCalcResults() {
-  const data     = CALC_DATA[calcCategory];
-  const products = data[calcLoad];
-  const resultsEl= document.getElementById('calcResults');
-  const tempEl   = document.getElementById('calcTemp');
-  const tipTextEl= document.getElementById('calcTipText');
+  const data      = CALC_DATA[calcCategory];
+  const effectiveLoad = calcMethod === 'qty' ? qtyToLoad(calcCategory, calcQty) : calcLoad;
+  const products  = data[effectiveLoad];
+  const resultsEl = document.getElementById('calcResults');
+  const tempEl    = document.getElementById('calcTemp');
+  const tipTextEl = document.getElementById('calcTipText');
 
   if (!resultsEl || !data) return;
 
   if (tempEl) {
-    tempEl.textContent  = data.temp;
+    tempEl.textContent = data.temp;
     tempEl.className = `calc-temp-display ${data.tempClass || ''}`;
   }
   if (tipTextEl) tipTextEl.textContent = data.tip;
 
   resultsEl.innerHTML = products.map(p => {
     const isNever = p.amount === 'NUNCA';
-    const multiplier = p.mult * clothingAmount;
     return `
       <div class="calc-product-card${isNever ? ' calc-product-never' : ''}">
         <span class="calc-product-emoji">${p.emoji}</span>
         <div class="calc-product-info">
           <span class="calc-product-amount">${p.amount}</span>
-          ${multiplier !== 1 && !isNever ? `<span class="calc-product-mult">×${multiplier.toFixed(1)}</span>` : ''}
         </div>
         <span class="calc-product-name">${p.name}</span>
         <span class="calc-product-note">${p.note}</span>
@@ -162,13 +190,26 @@ function renderCalcResults() {
   }).join('');
 }
 
+function setCalcMethod(method) {
+  calcMethod = method;
+  const loadArea = document.getElementById('calcLoadArea');
+  const qtyArea  = document.getElementById('calcQtyArea');
+  if (loadArea) loadArea.hidden = (method !== 'load');
+  if (qtyArea)  qtyArea.hidden  = (method !== 'qty');
+  updateQtyDisplay();
+  renderCalcResults();
+}
+
 function initFullCalculator() {
-  const tabsEl     = document.getElementById('calcTabs');
-  const loadToggle = document.getElementById('calcLoadToggle');
+  const tabsEl       = document.getElementById('calcTabs');
+  const loadToggle   = document.getElementById('calcLoadToggle');
+  const methodToggle = document.getElementById('calcMethodToggle');
+  const qtyMinusBtn  = document.getElementById('qtyMinus');
+  const qtyPlusBtn   = document.getElementById('qtyPlus');
 
   if (!tabsEl) return;
 
-  // Handle both old (.calc-tab) and new (.calc-chip) class names
+  // Category chips
   tabsEl.addEventListener('click', (e) => {
     const tab = e.target.closest('.calc-tab') || e.target.closest('.calc-chip');
     if (!tab) return;
@@ -176,9 +217,14 @@ function initFullCalculator() {
     tabsEl.querySelectorAll('.calc-tab, .calc-chip').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     calcCategory = tab.dataset.category;
+    // Reset qty to a sensible default for each category
+    const t = QTY_THRESHOLDS[calcCategory];
+    if (calcQty > t.halfMax * 3) calcQty = t.halfMax;
+    updateQtyDisplay();
     renderCalcResults();
   });
 
+  // Load pills
   if (loadToggle) {
     loadToggle.addEventListener('click', (e) => {
       const btn = e.target.closest('.load-btn') || e.target.closest('.load-pill');
@@ -191,6 +237,39 @@ function initFullCalculator() {
     });
   }
 
+  // Method toggle (Carga vs Peças)
+  if (methodToggle) {
+    methodToggle.addEventListener('click', (e) => {
+      const pill = e.target.closest('.method-pill');
+      if (!pill) return;
+
+      methodToggle.querySelectorAll('.method-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      setCalcMethod(pill.dataset.method);
+    });
+  }
+
+  // Quantity +/- buttons
+  if (qtyMinusBtn) {
+    qtyMinusBtn.addEventListener('click', () => {
+      if (calcQty > 1) {
+        calcQty--;
+        updateQtyDisplay();
+        renderCalcResults();
+      }
+    });
+  }
+  if (qtyPlusBtn) {
+    qtyPlusBtn.addEventListener('click', () => {
+      if (calcQty < 30) {
+        calcQty++;
+        updateQtyDisplay();
+        renderCalcResults();
+      }
+    });
+  }
+
+  updateQtyDisplay();
   renderCalcResults();
 }
 

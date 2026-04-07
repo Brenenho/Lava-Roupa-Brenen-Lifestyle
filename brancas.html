@@ -9,25 +9,28 @@
   <link rel="stylesheet" href="css/guide.css">
   <link rel="stylesheet" href="css/machine.css">
   <style>
-    /* ── White clothes theme ── */
+    /* ── White clothes kawaii theme ── */
     :root {
       --guide-primary:  #64748B;
-      --guide-dark:     #334155;
+      --guide-dark:     #1E293B;
       --guide-light:    #F1F5F9;
-      --guide-gradient: linear-gradient(135deg, #334155 0%, #475569 40%, #64748B 100%);
+      --guide-gradient: linear-gradient(135deg, #1E293B 0%, #475569 40%, #7C8DB5 100%);
       --step-color:     #475569;
     }
 
     .guide-hero { background: var(--guide-gradient); }
-    .hero-blob   { background: #94A3B8; }
+    .hero-blob   { background: rgba(148,163,184,0.3); }
 
-    .step-number { background: var(--step-color); border-color: var(--guide-dark); box-shadow: 3px 3px 0px var(--guide-dark); }
+    .step-number {
+      background: linear-gradient(135deg, #475569, #7C3AFF) !important;
+      border: 3px solid rgba(255,255,255,0.4) !important;
+      box-shadow: 0 4px 16px rgba(71,85,105,0.35) !important;
+    }
 
     /* Decorative pattern overlay */
     .guide-hero::after {
       content: '';
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background-image: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.08) 0%, transparent 50%),
                         radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
       z-index: 1;
@@ -162,10 +165,10 @@
       <div class="container">
 
         <div class="section-heading">
-          <div class="section-heading-icon" style="background:#F1F5F9;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+          <div class="section-heading-icon" style="background: linear-gradient(135deg, rgba(255,45,159,0.12), rgba(124,58,255,0.1));">
+            <span style="font-size:1.4rem;">✨</span>
           </div>
-          <h2>Passo a Passo</h2>
+          <h2>Sua Jornada Mágica</h2>
         </div>
 
         <div class="steps-list">
