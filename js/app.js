@@ -14,14 +14,16 @@ const CALC_DATA = {
     tempClass: 'temp-warm',
     tip: 'Faça sempre o pré-molho com percarbonato e água quente (60°C) antes de colocar na máquina — o oxigênio ativo age muito melhor em água quente.',
     half: [
-      { emoji: '✨', name: 'Percarbonato', amount: '1 scoop', note: 'pré-molho ou compartimento pré-lavagem' },
-      { emoji: '🧴', name: 'Sabão p/ Brancas', amount: '½ tampinha', note: 'sabão líquido branco (Comfort, Omo Branco)' },
-      { emoji: '🧻', name: 'Lencinho Branqueador', amount: '1 lencinho', note: 'direto no tambor — opcional' },
+      { emoji: '✨', name: 'Percarbonato', amount: '1 scoop', note: 'pré-molho ou compartimento pré-lavagem', mult: 1 },
+      { emoji: '🧴', name: 'Sabão p/ Brancas', amount: '½ tampinha', note: 'sabão líquido branco (Comfort, Omo Branco)', mult: 1 },
+      { emoji: '🌿', name: 'Lysoform / Pinho Sol', amount: '½ tampinha', note: 'no compartimento de alvejante — tira cheiro', mult: 1 },
+      { emoji: '💎', name: 'Comfort Bloom', amount: '1 colher', note: 'pedras de cheiro — direto no tambor', mult: 1 },
     ],
     full: [
-      { emoji: '✨', name: 'Percarbonato', amount: '2 scoops', note: 'pré-molho ou compartimento pré-lavagem' },
-      { emoji: '🧴', name: 'Sabão p/ Brancas', amount: '1 tampinha', note: 'sabão líquido branco (Comfort, Omo Branco)' },
-      { emoji: '🧻', name: 'Lencinho Branqueador', amount: '1–2 lencinhos', note: 'direto no tambor da máquina' },
+      { emoji: '✨', name: 'Percarbonato', amount: '2 scoops', note: 'pré-molho ou compartimento pré-lavagem', mult: 2 },
+      { emoji: '🧴', name: 'Sabão p/ Brancas', amount: '1 tampinha', note: 'sabão líquido branco (Comfort, Omo Branco)', mult: 2 },
+      { emoji: '🌿', name: 'Lysoform / Pinho Sol', amount: '1 tampinha', note: 'no compartimento de alvejante — tira cheiro', mult: 2 },
+      { emoji: '💎', name: 'Comfort Bloom', amount: '2 colheres', note: 'pedras de cheiro — direto no tambor', mult: 2 },
     ],
   },
   pretas: {
@@ -31,14 +33,18 @@ const CALC_DATA = {
     tempClass: 'temp-cold',
     tip: 'Água quente abre as fibras do tecido e libera o pigmento preto. Frio mantém a trama fechada e a cor no lugar por muito mais tempo.',
     half: [
-      { emoji: '🧴', name: 'Sabão p/ Pretas', amount: '½ tampinha', note: 'Omom, Comfort Dark ou Persil Black' },
-      { emoji: '🧻', name: 'Lencinho Tingidor', amount: '1 lencinho', note: 'direto no tambor — re-tinge o tecido' },
-      { emoji: '⚠️', name: 'Amaciante', amount: 'NUNCA', note: 'remove o pigmento preto das fibras' },
+      { emoji: '🧴', name: 'Sabão p/ Pretas', amount: '½ tampinha', note: 'Omom, Comfort Dark ou Persil Black', mult: 1 },
+      { emoji: '🧻', name: 'Lencinho Tingidor', amount: '1 lencinho', note: 'direto no tambor — re-tinge o tecido', mult: 1 },
+      { emoji: '🌿', name: 'Lysoform / Pinho Sol', amount: '½ tampinha', note: 'no compartimento de alvejante — tira cheiro', mult: 1 },
+      { emoji: '💎', name: 'Comfort Bloom', amount: '1 colher', note: 'pedras de cheiro — direto no tambor', mult: 1 },
+      { emoji: '⚠️', name: 'Amaciante', amount: 'NUNCA', note: 'remove o pigmento preto das fibras', mult: 1 },
     ],
     full: [
-      { emoji: '🧴', name: 'Sabão p/ Pretas', amount: '1 tampinha', note: 'Omom, Comfort Dark ou Persil Black' },
-      { emoji: '🧻', name: 'Lencinho Tingidor', amount: '1–3 lencinhos', note: '3 lencinhos para roupa muito desbotada' },
-      { emoji: '⚠️', name: 'Amaciante', amount: 'NUNCA', note: 'remove o pigmento preto das fibras' },
+      { emoji: '🧴', name: 'Sabão p/ Pretas', amount: '1 tampinha', note: 'Omom, Comfort Dark ou Persil Black', mult: 2 },
+      { emoji: '🧻', name: 'Lencinho Tingidor', amount: '2–3 lencinhos', note: '3 para roupa muito desbotada', mult: 2 },
+      { emoji: '🌿', name: 'Lysoform / Pinho Sol', amount: '1 tampinha', note: 'no compartimento de alvejante — tira cheiro', mult: 2 },
+      { emoji: '💎', name: 'Comfort Bloom', amount: '2 colheres', note: 'pedras de cheiro — direto no tambor', mult: 2 },
+      { emoji: '⚠️', name: 'Amaciante', amount: 'NUNCA', note: 'remove o pigmento preto das fibras', mult: 1 },
     ],
   },
   coloridas: {
@@ -48,12 +54,14 @@ const CALC_DATA = {
     tempClass: 'temp-warm',
     tip: 'Tons escuros tratam-se como roupas pretas (sabão específico, 20°C). Tons claros tratam-se como brancas (percarbonato, 40°C). Sempre vire a roupa ao avesso.',
     half: [
-      { emoji: '🧴', name: 'Sabão Cores Vivas', amount: '½ tampinha', note: 'conforme o rótulo do produto' },
-      { emoji: '🌿', name: 'Pinho Sol / Lisoforme', amount: '½ tampinha', note: 'cheiro marcante e desinfecção' },
+      { emoji: '🧴', name: 'Sabão Cores Vivas', amount: '½ tampinha', note: 'conforme o rótulo do produto', mult: 1 },
+      { emoji: '🌿', name: 'Lysoform / Pinho Sol', amount: '½ tampinha', note: 'no compartimento de alvejante — tira cheiro', mult: 1 },
+      { emoji: '💎', name: 'Comfort Bloom', amount: '1 colher', note: 'pedras de cheiro — direto no tambor', mult: 1 },
     ],
     full: [
-      { emoji: '🧴', name: 'Sabão Cores Vivas', amount: '1 tampinha', note: 'conforme o rótulo do produto' },
-      { emoji: '🌿', name: 'Pinho Sol / Lisoforme', amount: '1 tampinha', note: 'cheiro marcante e desinfecção' },
+      { emoji: '🧴', name: 'Sabão Cores Vivas', amount: '1 tampinha', note: 'conforme o rótulo do produto', mult: 2 },
+      { emoji: '🌿', name: 'Lysoform / Pinho Sol', amount: '1 tampinha', note: 'no compartimento de alvejante — tira cheiro', mult: 2 },
+      { emoji: '💎', name: 'Comfort Bloom', amount: '2 colheres', note: 'pedras de cheiro — direto no tambor', mult: 2 },
     ],
   },
   toalhas: {
@@ -61,16 +69,18 @@ const CALC_DATA = {
     emoji: '🛁',
     temp: '40–60°C',
     tempClass: 'temp-hot',
-    tip: 'Vinagre de álcool no lugar do amaciante amacia as fibras SEM deixar resíduo. Amaciante cria uma camada que endurece a toalha e causa cheiro de mofo ao longo do tempo.',
+    tip: 'Vinagre de álcool no lugar do amaciante amacia as fibras SEM deixar resíduo. Amaciante cria uma camada que endurece a toalha.',
     half: [
-      { emoji: '🧴', name: 'Sabão Neutro', amount: '1 tampinha', note: 'conforme o rótulo do produto' },
-      { emoji: '🍶', name: 'Vinagre de Álcool', amount: '1 copo americano', note: '~200ml no compartimento do amaciante' },
-      { emoji: '🌿', name: 'Pinho Sol / Lisoforme', amount: '½ tampinha', note: 'elimina bactérias que causam mau cheiro' },
+      { emoji: '🧴', name: 'Sabão Neutro', amount: '1 tampinha', note: 'conforme o rótulo do produto', mult: 1 },
+      { emoji: '🍶', name: 'Vinagre de Álcool', amount: '1 copo', note: '~200ml no compartimento do amaciante', mult: 1 },
+      { emoji: '🌿', name: 'Lysoform / Pinho Sol', amount: '½ tampinha', note: 'no compartimento de alvejante — tira cheiro', mult: 1 },
+      { emoji: '💎', name: 'Comfort Bloom', amount: '1 colher', note: 'pedras de cheiro — direto no tambor', mult: 1 },
     ],
     full: [
-      { emoji: '🧴', name: 'Sabão Neutro', amount: '2 tampinhas', note: 'conforme o rótulo do produto' },
-      { emoji: '🍶', name: 'Vinagre de Álcool', amount: '1 copo americano', note: '~200ml no compartimento do amaciante' },
-      { emoji: '🌿', name: 'Pinho Sol / Lisoforme', amount: '1 tampinha', note: 'elimina bactérias que causam mau cheiro' },
+      { emoji: '🧴', name: 'Sabão Neutro', amount: '2 tampinhas', note: 'conforme o rótulo do produto', mult: 2 },
+      { emoji: '🍶', name: 'Vinagre de Álcool', amount: '2 copos', note: '~400ml no compartimento do amaciante', mult: 2 },
+      { emoji: '🌿', name: 'Lysoform / Pinho Sol', amount: '1 tampinha', note: 'no compartimento de alvejante — tira cheiro', mult: 2 },
+      { emoji: '💎', name: 'Comfort Bloom', amount: '2 colheres', note: 'pedras de cheiro — direto no tambor', mult: 2 },
     ],
   },
   cama: {
@@ -80,12 +90,16 @@ const CALC_DATA = {
     tempClass: 'temp-warm',
     tip: 'Lave lençóis e fronhas separados dos edredons e cobertores — juntos, a máquina não consegue agitar bem nenhum dos dois.',
     half: [
-      { emoji: '🧴', name: 'Sabão Neutro', amount: '1 tampinha', note: 'conforme o rótulo do produto' },
-      { emoji: '✨', name: 'Percarbonato', amount: '1 scoop', note: 'para lençóis brancos ou cores claras' },
+      { emoji: '🧴', name: 'Sabão Neutro', amount: '1 tampinha', note: 'conforme o rótulo do produto', mult: 1 },
+      { emoji: '✨', name: 'Percarbonato', amount: '1 scoop', note: 'para lençóis brancos ou cores claras', mult: 1 },
+      { emoji: '🌿', name: 'Lysoform / Pinho Sol', amount: '½ tampinha', note: 'no compartimento de alvejante — tira cheiro', mult: 1 },
+      { emoji: '💎', name: 'Comfort Bloom', amount: '1 colher', note: 'pedras de cheiro — direto no tambor', mult: 1 },
     ],
     full: [
-      { emoji: '🧴', name: 'Sabão Neutro', amount: '2 tampinhas', note: 'conforme o rótulo do produto' },
-      { emoji: '✨', name: 'Percarbonato', amount: '2 scoops', note: 'para lençóis brancos ou cores claras' },
+      { emoji: '🧴', name: 'Sabão Neutro', amount: '2 tampinhas', note: 'conforme o rótulo do produto', mult: 2 },
+      { emoji: '✨', name: 'Percarbonato', amount: '2 scoops', note: 'para lençóis brancos ou cores claras', mult: 2 },
+      { emoji: '🌿', name: 'Lysoform / Pinho Sol', amount: '1 tampinha', note: 'no compartimento de alvejante — tira cheiro', mult: 2 },
+      { emoji: '💎', name: 'Comfort Bloom', amount: '2 colheres', note: 'pedras de cheiro — direto no tambor', mult: 2 },
     ],
   },
   edredom: {
@@ -95,12 +109,18 @@ const CALC_DATA = {
     tempClass: 'temp-cold',
     tip: 'Nunca exceda a dose de sabão — o excesso fica preso no enchimento, não sai no enxágue e vira criadouro de bactérias.',
     half: [
-      { emoji: '🧴', name: 'Sabão Delicados', amount: 'conforme rótulo', note: 'dose indicada na embalagem do produto' },
-      { emoji: '⚠️', name: 'Amaciante', amount: 'NUNCA', note: 'gruda nas fibras do enchimento e reduz a maciez' },
+      { emoji: '🧴', name: 'Sabão Delicados', amount: '½ tampinha', note: 'dose baixa para não grudar no enchimento', mult: 1 },
+      { emoji: '🍶', name: 'Vinagre de Álcool', amount: '½ copo', note: '~100ml no compartimento do amaciante', mult: 1 },
+      { emoji: '🌿', name: 'Lysoform / Pinho Sol', amount: '¼ tampinha', note: 'no compartimento de alvejante — tira cheiro', mult: 1 },
+      { emoji: '💎', name: 'Comfort Bloom', amount: '1 colher', note: 'pedras de cheiro — direto no tambor', mult: 1 },
+      { emoji: '⚠️', name: 'Amaciante', amount: 'NUNCA', note: 'gruda nas fibras do enchimento', mult: 1 },
     ],
     full: [
-      { emoji: '🧴', name: 'Sabão Delicados', amount: 'conforme rótulo', note: 'dose indicada na embalagem do produto' },
-      { emoji: '⚠️', name: 'Amaciante', amount: 'NUNCA', note: 'gruda nas fibras do enchimento e reduz a maciez' },
+      { emoji: '🧴', name: 'Sabão Delicados', amount: '1 tampinha', note: 'dose baixa para não grudar no enchimento', mult: 2 },
+      { emoji: '🍶', name: 'Vinagre de Álcool', amount: '1 copo', note: '~200ml no compartimento do amaciante', mult: 2 },
+      { emoji: '🌿', name: 'Lysoform / Pinho Sol', amount: '½ tampinha', note: 'no compartimento de alvejante — tira cheiro', mult: 2 },
+      { emoji: '💎', name: 'Comfort Bloom', amount: '2 colheres', note: 'pedras de cheiro — direto no tambor', mult: 2 },
+      { emoji: '⚠️', name: 'Amaciante', amount: 'NUNCA', note: 'gruda nas fibras do enchimento', mult: 1 },
     ],
   },
 };
@@ -109,6 +129,7 @@ const CALC_DATA = {
 
 let calcCategory = 'brancas';
 let calcLoad = 'half';
+let clothingAmount = 1;
 
 function renderCalcResults() {
   const data     = CALC_DATA[calcCategory];
@@ -121,16 +142,20 @@ function renderCalcResults() {
 
   if (tempEl) {
     tempEl.textContent  = data.temp;
-    tempEl.className = `calc-temp-badge ${data.tempClass || ''}`;
+    tempEl.className = `calc-temp-display ${data.tempClass || ''}`;
   }
   if (tipTextEl) tipTextEl.textContent = data.tip;
 
   resultsEl.innerHTML = products.map(p => {
     const isNever = p.amount === 'NUNCA';
+    const multiplier = p.mult * clothingAmount;
     return `
       <div class="calc-product-card${isNever ? ' calc-product-never' : ''}">
         <span class="calc-product-emoji">${p.emoji}</span>
-        <span class="calc-product-amount">${p.amount}</span>
+        <div class="calc-product-info">
+          <span class="calc-product-amount">${p.amount}</span>
+          ${multiplier !== 1 && !isNever ? `<span class="calc-product-mult">×${multiplier.toFixed(1)}</span>` : ''}
+        </div>
         <span class="calc-product-name">${p.name}</span>
         <span class="calc-product-note">${p.note}</span>
       </div>`;
@@ -143,11 +168,12 @@ function initFullCalculator() {
 
   if (!tabsEl) return;
 
+  // Handle both old (.calc-tab) and new (.calc-chip) class names
   tabsEl.addEventListener('click', (e) => {
-    const tab = e.target.closest('.calc-tab');
+    const tab = e.target.closest('.calc-tab') || e.target.closest('.calc-chip');
     if (!tab) return;
 
-    tabsEl.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+    tabsEl.querySelectorAll('.calc-tab, .calc-chip').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     calcCategory = tab.dataset.category;
     renderCalcResults();
@@ -155,10 +181,10 @@ function initFullCalculator() {
 
   if (loadToggle) {
     loadToggle.addEventListener('click', (e) => {
-      const btn = e.target.closest('.load-btn');
+      const btn = e.target.closest('.load-btn') || e.target.closest('.load-pill');
       if (!btn) return;
 
-      loadToggle.querySelectorAll('.load-btn').forEach(b => b.classList.remove('active'));
+      loadToggle.querySelectorAll('.load-btn, .load-pill').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       calcLoad = btn.dataset.load;
       renderCalcResults();

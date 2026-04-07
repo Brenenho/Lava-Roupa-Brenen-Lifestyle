@@ -1,0 +1,115 @@
+<h2>Qual vibe combina com você?</h2>
+<p class="subtitle">Escolha a direção visual que mais te representa como especialista</p>
+
+<div class="cards">
+
+  <!-- Option A: Floral Soft -->
+  <div class="card" data-choice="floral" onclick="toggleSelect(this)">
+    <div class="card-image" style="
+      background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 40%, #ffeeff 100%);
+      padding: 24px;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    ">
+      <!-- decorative circles -->
+      <div style="position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(255,182,193,0.4)"></div>
+      <div style="position:absolute;bottom:-10px;left:10px;width:50px;height:50px;border-radius:50%;background:rgba(255,192,203,0.3)"></div>
+
+      <div style="font-size:2rem">🌸</div>
+      <div style="background:rgba(255,255,255,0.7);border-radius:12px;padding:10px 14px;backdrop-filter:blur(4px)">
+        <div style="font-size:0.65rem;color:#c2185b;font-weight:700;letter-spacing:0.08em;text-transform:uppercase">O Método Certo</div>
+        <div style="font-size:1.1rem;font-weight:800;color:#880e4f;margin-top:2px">por Breno ✨</div>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px">
+        <span style="background:rgba(255,255,255,0.8);border-radius:20px;padding:4px 10px;font-size:0.65rem;color:#ad1457;font-weight:600">🧺 Separar</span>
+        <span style="background:rgba(255,255,255,0.8);border-radius:20px;padding:4px 10px;font-size:0.65rem;color:#ad1457;font-weight:600">🫧 Lavar</span>
+        <span style="background:rgba(255,255,255,0.8);border-radius:20px;padding:4px 10px;font-size:0.65rem;color:#ad1457;font-weight:600">☀️ Secar</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>🌸 Floral Suave</h3>
+      <p>Rosa, lilás, tons perolados. Delicado e feminino com flores e bolhas como elementos decorativos. Sensação de cuidado e carinho.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Pastel Modern -->
+  <div class="card" data-choice="pastel" onclick="toggleSelect(this)">
+    <div class="card-image" style="
+      background: linear-gradient(160deg, #e0f7fa 0%, #b2ebf2 30%, #e8f5e9 100%);
+      padding: 24px;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    ">
+      <div style="position:absolute;top:10px;right:10px;width:60px;height:60px;border-radius:50%;background:rgba(128,222,234,0.3);border:2px solid rgba(128,222,234,0.5)"></div>
+      <div style="position:absolute;bottom:10px;right:30px;width:35px;height:35px;border-radius:50%;background:rgba(165,214,167,0.4)"></div>
+
+      <div style="font-size:2rem">💎</div>
+      <div style="background:rgba(255,255,255,0.75);border-radius:16px;padding:10px 14px;border:1px solid rgba(255,255,255,0.9)">
+        <div style="font-size:0.65rem;color:#00838f;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Tutorial Completo</div>
+        <div style="font-size:1.1rem;font-weight:800;color:#006064;margin-top:2px">O Método ✦</div>
+      </div>
+      <div style="margin-top:4px">
+        <div style="height:4px;border-radius:4px;background:rgba(255,255,255,0.4);overflow:hidden">
+          <div style="height:100%;width:60%;background:linear-gradient(90deg,#4dd0e1,#80cbc4);border-radius:4px"></div>
+        </div>
+        <div style="font-size:0.6rem;color:#00838f;margin-top:4px;font-weight:600">3 de 5 passos concluídos ✓</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>💎 Pastel Moderno</h3>
+      <p>Azul menta, verde suave, branco cristal. Clean e sofisticado com glassmorphism. Sensação de organização e frescor.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Dreamy Purple -->
+  <div class="card" data-choice="dreamy" onclick="toggleSelect(this)">
+    <div class="card-image" style="
+      background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 40%, #fce4ec 100%);
+      padding: 24px;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    ">
+      <div style="position:absolute;top:-15px;left:-15px;width:70px;height:70px;border-radius:50%;background:rgba(186,104,200,0.2)"></div>
+      <div style="position:absolute;bottom:-5px;right:20px;width:45px;height:45px;border-radius:50%;background:rgba(240,98,146,0.2)"></div>
+
+      <div style="font-size:2rem">🫧</div>
+      <div style="background:rgba(255,255,255,0.65);border-radius:14px;padding:10px 14px;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.8)">
+        <div style="font-size:0.65rem;color:#7b1fa2;font-weight:700;letter-spacing:0.08em;text-transform:uppercase">Aprenda Comigo</div>
+        <div style="font-size:1.1rem;font-weight:800;color:#4a148c;margin-top:2px">Lavagem Perfeita 🌙</div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:4px">
+        <div style="background:rgba(255,255,255,0.6);border-radius:8px;padding:6px 8px;text-align:center;flex:1">
+          <div style="font-size:0.9rem">✨</div>
+          <div style="font-size:0.55rem;color:#6a1b9a;font-weight:700">Dicas</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.6);border-radius:8px;padding:6px 8px;text-align:center;flex:1">
+          <div style="font-size:0.9rem">🧺</div>
+          <div style="font-size:0.55rem;color:#6a1b9a;font-weight:700">Passos</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.6);border-radius:8px;padding:6px 8px;text-align:center;flex:1">
+          <div style="font-size:0.9rem">💜</div>
+          <div style="font-size:0.55rem;color:#6a1b9a;font-weight:700">Método</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>🌙 Sonho Roxo</h3>
+      <p>Lilás, lavanda, rosa pêssego. Dreamy e mágico com efeito glassmorphism. Sensação encantada e especial.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:24px;text-align:center">Clique na que mais combina com você — ou me diz nos dois se quiser misturar</p>

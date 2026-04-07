@@ -664,7 +664,7 @@ p  { font-size: 1rem; font-weight: 400; }
 }
 
 /* ── Hero (simple - for guide pages) ── */
-.hero { padding: var(--sp-12) 0 var(--sp-8); text-align: center; }
+.hero { padding: 240px 0 var(--sp-12) !important; text-align: center; }
 
 .hero-badge {
   display: inline-flex;
@@ -879,7 +879,7 @@ p  { font-size: 1rem; font-weight: 400; }
     padding: var(--sp-4);
     padding-left: calc(var(--sp-4) + 42px + var(--sp-3));
   }
-  .hero { padding: var(--sp-8) 0 var(--sp-4); }
+  .hero { padding: 120px 0 var(--sp-8) !important; }
   .guides-grid { grid-template-columns: 1fr; gap: var(--sp-4); }
   .guide-hero { padding: var(--sp-8) 0 var(--sp-8); border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
   .guide-hero-inner { gap: var(--sp-4); }
