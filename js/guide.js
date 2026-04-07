@@ -436,15 +436,6 @@ function initSteps() {
     if (stepId && localStorage.getItem(getStepKey(stepId)) === '1') {
       markDone(step, true, false);
     }
-
-    const doneBtn = step.querySelector('.done-btn');
-    if (doneBtn) {
-      doneBtn.addEventListener('click', e => {
-        e.stopPropagation();
-        const isDone = step.classList.contains('completed');
-        markDone(step, !isDone);
-      });
-    }
   });
 
   const firstUncompleted = steps.findIndex(s => !s.classList.contains('completed'));
@@ -452,6 +443,14 @@ function initSteps() {
   showStep(startIndex, 'next');
   updateProgress();
 }
+
+window.markStepDone = function(btn) {
+  const step = btn.closest('.step-item');
+  if (step) {
+    const isDone = step.classList.contains('completed');
+    markDone(step, !isDone);
+  }
+};
 
 function initReset() {
   const btn = document.getElementById('resetBtn');
